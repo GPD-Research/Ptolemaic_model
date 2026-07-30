@@ -1,0 +1,9 @@
+observation_id,days_from_epoch,calendar_date,planet,ecliptic_longitude_deg,ecliptic_latitude_deg,historical_source,notes
+1,0,1582-10-26,Mars,95.4,1.2,Tycho_Brahe,Standard prograde motion
+2,30,1582-11-25,Mars,108.1,1.4,Tycho_Brahe,Approaching station
+3,45,1582-12-10,Mars,111.5,1.6,Tycho_Brahe,First stationary point (retrograde begins)
+4,60,1582-12-25,Mars,109.2,2.0,Tycho_Brahe,Retrograde motion
+5,75,1583-01-09,Mars,104.5,2.5,Tycho_Brahe,Opposition (maximum brightness)
+6,90,1583-01-24,Mars,99.8,2.7,Tycho_Brahe,Retrograde motion
+7,105,1583-02-08,Mars,97.1,2.5,Tycho_Brahe,Second stationary point (prograde resumes)
+8,135,1583-03-10,Mars,102.3,1.9,Tycho_Brahe,Standard prograde motion
