@@ -1,0 +1,6 @@
+body,observation_date,observed_longitude_deg
+mars,2020-10-13,20.0
+mars,2022-12-08,70.0
+venus,2020-06-03,72.0
+venus,2023-08-13,140.0
+jupiter,2022-09-26,0.0
