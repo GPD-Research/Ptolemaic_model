@@ -10,6 +10,14 @@ This module relies purely on geometry rather than dynamical forces. It is design
 * `src/astronomy.py` - Converts 2D physical paths into apparent angular longitudes as seen from an Earth-bound observer.
 * `src/metrics.py` - Statistical engine customized for circular data, handling 360-degree wraparounds and aggressive parameter penalties.
 
+## Animated Viewer
+Open `viewer/index.html` in any browser (no build or server needed; `make viewer` opens it). It draws the full Almagest model in 2D, centred on a fixed Earth, and animates it in time:
+* **Kinematics** (`viewer/ptolemy.js`, mirrored in `src/almagest.py`): eccentric deferents, equants and epicycles for the planets, the eccentric Sun, the lunar crank with its prosneusis point, and Mercury's moving deferent centre. Parameters, mean motions and epoch values (Nabonassar era) are Ptolemy's own.
+* **Speed slider** from 1:1 real time up to about 3 years per second, with presets, play/pause, reverse, "Now" and jump-to-date.
+* **Views**: schematic ring spacing or the absolute nesting distances of the *Planetary Hypotheses*, isolate a single body, zoom and pan, trails that trace each body's looping path relative to Earth, and a live table of apparent longitude and daily motion with retrograde flags.
+
+Positions are Ptolemy's predictions, not the modern sky: about 1° behind the real sky in his day (his equinox error), drifting to about 10° behind today because his tropical year is slightly too long.
+
 ## Suggested Experiments
 
 ### 1. Confirming the Model: Retrograde Motion
