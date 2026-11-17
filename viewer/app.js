@@ -303,8 +303,13 @@
   function jump() {
     const m = $("jump").value.trim().match(/^(-?\d{1,6})-(\d{1,2})-(\d{1,2})$/);
     if (!m) { $("jump").style.borderColor = "#ff7b72"; return; }
+    const [y, mo, dd] = [Number(m[1]), Number(m[2]), Number(m[3])];
     const d = new Date(Date.UTC(2000, 0, 1));
-    d.setUTCFullYear(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    d.setUTCFullYear(y, mo - 1, dd);
+    if (isNaN(d.getTime()) || d.getUTCFullYear() !== y || d.getUTCMonth() !== mo - 1 || d.getUTCDate() !== dd) {
+      $("jump").style.borderColor = "#ff7b72";
+      return;
+    }
     $("jump").style.borderColor = "";
     days = P.daysFromDate(d);
   }
