@@ -40,7 +40,7 @@ def chord_table():
     rows = []
     for i in range(1, 361):
         a = i / 2
-        step = (chord(a + 0.5) - chord(a)) / 30
+        step = (chord(min(a + 0.5, 180)) - chord(a)) / 30
         rows.append((a, to_sexagesimal(chord(a)), to_sexagesimal(step, 3)))
     return rows
 
@@ -68,6 +68,8 @@ def right_ascension_of_ecliptic(lon, obliquity=OBLIQUITY):
     that is sin(alpha) = tan(delta) / tan(eps).
     """
     lon, q = _quadrant(lon)
+    if obliquity == 0:
+        return lon
     d = abs(declination_of_ecliptic(q, obliquity))
     c = (
         120

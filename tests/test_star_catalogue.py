@@ -27,6 +27,14 @@ def test_chord_table_matches_ptolemys_values():
     assert table[90.0][0] == (84, 51, 10)
     assert table[120.0][0] == (103, 55, 23)
     assert table[180.0][0] == (120, 0, 0)
+    assert table[180.0][1] == (0, 0, 0, 0)
+    assert all(min(step) >= 0 for _, step in table.values())
+
+
+def test_zero_obliquity_leaves_longitude_unchanged():
+    for lon in (0, 30, 135, 250, 359):
+        assert trigonometry.right_ascension_of_ecliptic(lon, 0) == pytest.approx(lon)
+        assert trigonometry.declination_of_ecliptic(lon, 0) == pytest.approx(0)
 
 
 def test_obliquity_is_half_the_arc_between_the_tropics():
