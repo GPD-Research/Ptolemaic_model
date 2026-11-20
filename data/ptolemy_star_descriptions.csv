@@ -1,0 +1,1029 @@
+number,latin,english
+1,Quae est in extremitate caudae,the one at the end of the tail
+2,Quae post ipsam in cauda est,"the one beyond it, on the tail"
+3,Quae post istam prope radicem caudae,"the one beyond that one, near the root of the tail"
+4,Australis stella praecedentis lateris figurae quadrilaterae,the southern star of the western side of the quadrilateral
+5,Borealis ejusdem lateris,the northern star of the same side
+6,Australis earum quae in sequenti latere sunt,the southern of those on the eastern side
+7,Borealis ejusdem lateris,the northern star of the same side
+8,Australissima extra figuram in recta sequentis lateris,"the most southern one outside the figure, in line with the eastern side"
+9,Quae est in extremitate rictus,the one at the corner of the open jaws
+10,Praecedens earum quae in duobus oculis sunt,the western of those in the two eyes
+11,Sequens earum,the eastern one of them
+12,Praecedens earum quae in fronte sunt,the western of those on the forehead
+13,Sequens earum,the eastern one of them
+14,Quae in extremitate praecedentis auris est,the one at the tip of the western ear
+15,Praecedens earum quae in collo sunt,the western of those on the neck
+16,Sequens earum,the eastern one of them
+17,Borealior de duabus quae in pectore sunt,the more northern of the two on the chest
+18,Australior ipsarum,the more southern of them
+19,Quae in genu sinistro est,the one on the left knee
+20,Borealis earum quae in anterioris extremitate pedis sinistri sunt,the northern of those at the tip of the left front foot
+21,Australior ipsarum,the more southern of them
+22,Quae supra genu dextrum est,the one above the right knee
+23,Quae infra genu dextrum est,the one below the right knee
+24,"Earum quae sunt in quadrilatera figura, illa in dorso est","of those in the quadrilateral, the one on the back"
+25,Quae de istis in ursae latere est,"of these, the one on the Bear's side"
+26,Quae in radice caudae,the one at the root of the tail
+27,Reliqua quae est in posteriori sinistra coxa,"the remaining one, on the left hind hip"
+28,Praecedens earum quae in extremitate posteriorum sinistri pedis sunt,the western of those at the tip of the left hind foot
+29,Quae istam sequitur,the one east of that one
+30,Quae est in poplite sinistro,the one behind the left knee
+31,Borealium earum quae in extremitate posterioris dextri pedis sunt,the northern of those at the tip of the right hind foot
+32,Australior earum,the more southern of them
+33,"De tribus in cauda locatarum, prima post caudae radicem","of the three on the tail, the first after the tail's root"
+34,Media ipsarum,the middle one of them
+35,"Tertia, et in ipsa extremitate caudae","the third, at the very end of the tail"
+36,Quae sub cauda procul ad austrum est,"the one below the tail, well to the south"
+37,Quae istam praecedit obscurior,the fainter one west of that one
+38,Australior quae inter anteriores ursae pedes et caput Leonis est,the more southern one between the Bear's front feet and the Lion's head
+39,Borealior hac,the one north of this
+40,Sequens reliquarum trium obscurarum,the eastern of the three remaining faint ones
+41,Praecedens istam,the one west of that one
+42,Hanc etiam praecedens,the one west of this too
+43,Quae inter anteriores pedes et Geminos est,the one between the front feet and the Twins
+44,Quae in lingua draconis est,the one on the dragon's tongue
+45,Quae in ore est,the one in the mouth
+46,Quae supra oculum,the one above the eye
+47,Quae in maxilla,the one on the jaw
+48,Quae supra caput,the one above the head
+49,Borealis de tribus quae sunt in recta linea et in prima flexione colli,the northern of the three in a straight line at the first bend of the neck
+50,Australis ipsarum,the southern one of them
+51,Media ipsarum,the middle one of them
+52,Sequens istas versus ortum,"the one east of these, towards the rising"
+53,"Quae in sequenti fluxu est, australior earum quae sunt in praecedente latere quadrilaterae","the one in the eastern stream, the more southern of those on the western side of the quadrilateral"
+54,Borealior earum quae sunt in antecedente latere,the more northern of those on the western side
+55,Borealis earum quae sunt in latere sequente,the northern of those on the eastern side
+56,Australis lateris sequentis,the southern star of the eastern side
+57,"Australis sequenti fluxu, trianguli","the southern star of the triangle, in the eastern stream"
+58,Praecedens de reliquis duabus trianguli,the western of the triangle's two remaining stars
+59,Sequens de ipsis,the eastern one of them
+60,Sequens de tribus quae in antecedente deinceps triangulo sunt,the eastern of the three in the western triangle
+61,Australis de reliquis duabus trianguli,the southern of the triangle's two remaining stars
+62,Borealior reliquis duabus,the one north of the two remaining ones
+63,Quae de duabus parvis ad occidentalem partem trianguli sequitur,"of the two small ones on the western part of the triangle, the eastern one"
+64,Praecedens de ipsis,the western one of them
+65,Australior de tribus quae deinceps per rectam lineam sunt,the more southern of the three in a straight row
+66,Media ipsarum,the middle one of them
+67,Borealior ipsarum,the more northern of them
+68,Borealior duarum quae deinceps ad occasum sunt,the more northern of the two in a row to the west
+69,Australior ipsarum,the more southern of them
+70,Quae de istis in flexu caudae ad occasum est,"of these, the western one on the bend of the tail"
+71,Praecedens de duabus satis ab ista distantibus,the western of the two well away from that one
+72,Quae ipsas sequitur,the one east of them
+73,Quae istis prope caudam adhaeret,"the one next to these, near the tail"
+74,Reliqua quae in extremitate caudae est,"the remaining one, at the end of the tail"
+75,Quae in pede dextro est,the one on the right foot
+76,Quae in pede sinistro,the one on the left foot
+77,Quae ad cingulum est in dextro latere,"the one by the belt, on the right side"
+78,Quae super dextrum humerum est tangens ipsum,"the one above the right shoulder, touching it"
+79,Quae supra dextrum cubitum tangens ipsum,"the one above the right elbow, touching it"
+80,Quae sub hoc cubito ipsum quoque tangens,"the one below this elbow, also touching it"
+81,Quae in pectore,the one on the chest
+82,Quae in sinistro brachio,the one on the left arm
+83,Australis de tribus quae in tiara sunt,the southern of the three in the tiara
+84,Media ipsarum,the middle one of them
+85,Borealis ipsarum,the northern one of them
+86,Praecedens tiaram,the one west of the tiara
+87,Sequens tiaram,the one east of the tiara
+88,Praecedens de tribus quae sunt in manu sinistra,the western of the three in the left hand
+89,Media et australior de tribus,"the middle, more southern one of the three"
+90,Sequens de tribus,the eastern of the three
+91,Quae in sinistro cubito est,the one on the left elbow
+92,Quae est in humero sinistro,the one on the left shoulder
+93,Quae est in capite,the one on the head
+94,Quae in humero dextro,the one on the right shoulder
+95,Borealior ipsarum et in collorobo,"the more northern of them, on the crook"
+96,Adhuc borealior ista et in extremitate collorobi,"the one still further north of that one, at the end of the crook"
+97,Borealior duarum quae sunt in clava sub humero,the more northern of the two on the club below the shoulder
+98,Australior ipsarum,the more southern of them
+99,Quae in extremitate dextrae manus est,the one at the tip of the right hand
+100,Praecedens de duabus quae in vola manus sunt,the western of the two in the palm of the hand
+101,Sequens ipsarum,the eastern one of them
+102,Quae in extremitate capuli collorobi,the one at the end of the crook's handle
+103,Quae in crure dextro juxta cingulum,the one on the right leg near the belt
+104,Sequens de duabus quae in cingulo sunt,the eastern of the two on the belt
+105,Praecedens ipsarum,the western one of them
+106,Quae est in dextro calcaneo,the one on the right heel
+107,Borealis de tribus quae sunt in sinistra tibia,the northern of the three on the left shin
+108,Media ipsarum,the middle one of them
+109,Australis ipsarum,the southern one of them
+110,Quae est inter crura et vocatur Arcturus subrufa,"the one between the legs, called Arcturus, reddish"
+111,Fulgens earum quae sunt in corona,the bright one of those in the crown
+112,Quae omnes istas praecedit,the one west of all these
+113,Borealior quae istam sequitur,the more northern one east of that one
+114,Sequens istam et borealior ista,the one east and north of that one
+115,Quae fulgentem a meridie sequitur,"the one east of the bright one, to the south"
+116,Quae istam propius sequitur,the one closely east of that one
+117,Quae post istas rursus sequitur,the one that follows again beyond these
+118,Sequens cunctas quae in corona sunt,the one east of all those in the crown
+119,Quae in capite,the one on the head
+120,Quae in humero dextro penes axillam seu scapulam,"the one on the right shoulder, by the armpit or shoulder blade"
+121,Quae in brachio dextro,the one on the right arm
+122,Quae in cubito dextro,the one on the right elbow
+123,Quae in humero sinistro,the one on the left shoulder
+124,Quae in brachio sinistro,the one on the left arm
+125,Quae in sinistro cubito,the one on the left elbow
+126,De tribus quae sunt in sinistra manus vola illa quae sequitur,"of the three in the palm of the left hand, the eastern one"
+127,Borealis de duabus reliquis,the northern of the two remaining ones
+128,Australior ipsarum,the more southern of them
+129,Quae in dextro latere,the one on the right side
+130,Quae in latere sinistro,the one on the left side
+131,Borealior ista in vertebro sinistrae coxae,"the one north of that one, on the joint of the left hip"
+132,Quae in capite cruris ejusdem,the one at the top of the same leg
+133,Praecedens de tribus quae sunt in sinistro crure,the western of the three on the left leg
+134,Sequens istam,the one east of that one
+135,Quae adhuc istam sequitur,the one still further east of that one
+136,Quae in genu sinistro,the one on the left knee
+137,Quae in sinistra sura,the one on the left calf
+138,Praecedens de tribus quae sunt in extremitate pedis sinistri,the western of the three at the tip of the left foot
+139,Media de tribus,the middle of the three
+140,Sequens ipsarum,the eastern one of them
+141,Quae in vertebro coxae dextrae,the one on the joint of the right hip
+142,Borealior ista in eodem crure,"the one north of that one, on the same leg"
+143,Quae in genu dextro,the one on the right knee
+144,Australior duarum quae in genu dextro sunt,the more southern of the two on the right knee
+145,Borealior ipsarum,the more northern of them
+146,Quae in tibia dextra,the one on the right shin
+147,Quae in extremitate dextri pedis est ipsa eadem in extremitate collorobi,"the one at the tip of the right foot, the same as the one at the end of the crook"
+148,Australior illa quae est in brachio dextro,the one south of the one on the right arm
+149,Fulgens quae in testa est et vocatur Lyra,"the bright one on the shell, called the Lyre"
+150,Borealis de duabus quae isti adhaerent,the northern of the two next to that one
+151,Australior ipsarum,the more southern of them
+152,Quae istas sequitur et media inter ortum cornuum,"the one east of these, midway between the roots of the horns"
+153,Borealior de duabus contiguis quae sunt ad orientalem testae partem,the more northern of the two close together on the eastern part of the shell
+154,Australior ipsarum,the more southern of them
+155,Borealior duarum praecedentium quae in jugo lyrae sunt,the more northern of the two western ones on the lyre's crossbar
+156,Australior ipsarum,the more southern of them
+157,Borealior duarum sequentium quae in jugo lyrae sunt,the more northern of the two eastern ones on the lyre's crossbar
+158,Australior ipsarum,the more southern of them
+159,Quae est in ore,the one in the mouth
+160,Quae istam sequitur et est in capite,"the one east of that one, on the head"
+161,Quae in medio collo,the one in the middle of the neck
+162,Quae in pectore,the one on the chest
+163,Fulgens quae in cauda est,the bright one on the tail
+164,Quae in cubito alae dextrae est,the one on the elbow of the right wing
+165,Australis de tribus quae sunt in pectine dextrae alae,the southern of the three on the feather tips of the right wing
+166,Media de tribus,the middle of the three
+167,Borealis ipsarum quae est in extremitate pectinis,"the northern one of them, at the tips of the feathers"
+168,Quae in cubito alae sinistrae,the one on the elbow of the left wing
+169,Borealior ipsarum et in medio ejusdem alae,"the more northern of them, in the middle of the same wing"
+170,Quae in extremitate pectinis alae sinistrae,the one at the feather tips of the left wing
+171,Quae in pede sinistro,the one on the left foot
+172,Quae in genu sinistro,the one on the left knee
+173,Praecedens de duabus quae sunt in pede dextro,the western of the two on the right foot
+174,Sequens ipsarum,the eastern one of them
+175,Quae in genu dextro nubi similis,the cloud-like one on the right knee
+176,Australior duarum quae sunt sub ala sinistra,the more southern of the two under the left wing
+177,Borealior ipsarum,the more northern of them
+178,Quae in capite,the one on the head
+179,Quae in pectore,the one on the chest
+180,Borealior ipsa et est in cingulo,"the one north of it, on the belt"
+181,Quae supra sedem in cruribus est,"the one above the seat, on the legs"
+182,Quae in genibus,the one on the knees
+183,Quae in tibia,the one on the shin
+184,Quae in extremitate pedis,the one at the tip of the foot
+185,Quae in sinistro brachio,the one on the left arm
+186,Quae sub cubito sinistro,the one below the left elbow
+187,Quae in brachio dextro,the one on the right arm
+188,Quae supra pedem sedis est,the one above the foot of the seat
+189,Quae in media sede seu cathedra,"the one in the middle of the seat, or throne"
+190,Quae in extremitate sedis,the one at the edge of the seat
+191,Quae in dextrae manus extremitate et est nebulosa,"the one at the tip of the right hand, nebulous"
+192,Quae in dextro cubito,the one on the right elbow
+193,Quae in humero dextro,the one on the right shoulder
+194,Quae in humero sinistro,the one on the left shoulder
+195,Quae in capite,the one on the head
+196,Quae in occipite,the one on the back of the head
+197,Fulgens quae est in dextro latere Persei,the bright one on Perseus's right side
+198,Praecedens de tribus quae sunt post illam quae est in latere,the western of the three beyond the one on the side
+199,Media de tribus,the middle of the three
+200,Sequens ipsarum,the eastern one of them
+201,Quae in cubito sinistro,the one on the left elbow
+202,Fulgens quae est in Gorgoneo,the bright one in the Gorgon's head
+203,Quae istam sequitur,the one east of that one
+204,Quae splendidam praecedit,the one west of the bright one
+205,Reliqua quae istam adhuc praecedit,"the remaining one, still further west of that one"
+206,Quae in genu dextro,the one on the right knee
+207,Praecedens ipsam et est supra genu,"the one west of it, above the knee"
+208,Praecedens de duabus quae supra poplitem,the western of the two above the back of the knee
+209,Sequens quae in ipso poplite est,"the eastern one, right behind the knee"
+210,Quae in dextra sura,the one on the right calf
+211,Quae in talo dextro,the one on the right ankle
+212,Quae in crure sinistro,the one on the left leg
+213,Quae in genu sinistro,the one on the left knee
+214,Quae in tibia sinistra,the one on the left shin
+215,Quae in sinistro calcaneo,the one on the left heel
+216,Quae istam sequitur et est in extremitate pedis sinistri,"the one east of that one, at the tip of the left foot"
+217,Quae ad ortum respectu ejus quae in genu sinistro est,the one east of the one on the left knee
+218,Quae ad septentrionem respectu earum quae in genu dextro est,the one north of those on the right knee
+219,Praecedens earum quae in Gorgoneo sunt,the western of those in the Gorgon's head
+220,Australior de tribus quae sunt in capite,the more southern of the three on the head
+221,Borealior et est supra caput,"the more northern one, above the head"
+222,Quae in humero sinistro et vocatur Capella,"the one on the left shoulder, called Capella"
+223,Quae in humero dextro,the one on the right shoulder
+224,Quae in cubito dextro,the one on the right elbow
+225,Quae in vola dextra,the one in the right palm
+226,Quae in cubito sinistro,the one on the left elbow
+227,Sequens de duabus quae sunt in vola et vocantur haedi,"the eastern of the two on the palm, called the Kids"
+228,Praecedens ipsas,the one west of them
+229,Quae in talo sinistro,the one on the left ankle
+230,Quae in talo dextro communis cum Tauri cornu,"the one on the right ankle, shared with the Bull's horn"
+231,Quae ad septentrionem respectu ejus est in extremitate pedis,the one north of the one at the tip of the foot
+232,Adhuc borealior ista et est in vertebro,"the one still further north of that one, on the hip joint"
+233,Parva quae est supra sinistrum pedem,the small one above the left foot
+234,Quae in capite,the one on the head
+235,Praecedens de duabus quae sunt in humero dextro,the western of the two on the right shoulder
+236,Sequens ipsarum,the eastern one of them
+237,Praecedens de duabus quae sunt in humero sinistro,the western of the two on the left shoulder
+238,Sequens ipsarum,the eastern one of them
+239,Quae in cubito sinistro,the one on the left elbow
+240,Praecedens de duabus quae sunt in extremitate manus sinistrae,the western of the two at the tip of the left hand
+241,Sequens ipsarum,the eastern one of them
+242,Quae in cubito dextro,the one on the right elbow
+243,Praecedens de duabus quae sunt in extremitate manus dextrae,the western of the two at the tip of the right hand
+244,Sequens ipsarum,the eastern one of them
+245,Quae in genu dextro,the one on the right knee
+246,Quae in tibia dextra,the one on the right shin
+247,Praecedens de quatuor quae sunt in pede dextro,the western of the four on the right foot
+248,Quae istam sequitur,the one east of that one
+249,Quae adhuc istam sequitur,the one still further east of that one
+250,Reliqua de quatuor quae omnes sequitur,"the remaining one of the four, east of all of them"
+251,Quae istas sequitur et tangit calcaneum,"the one east of these, touching the heel"
+252,Quae in sinistro genu,the one on the left knee
+253,Borealior de tribus quae sunt in sinistra tibia secundum rectam lineam,the more northern of the three in a straight line on the left shin
+254,Media ipsarum,the middle one of them
+255,Australior de tribus,the more southern of the three
+256,Quae in sinistro calcaneo,the one on the left heel
+257,Quae tangit plantam sinistri pedis,the one touching the sole of the left foot
+258,Borealior de tribus quae sunt ad ortum humeri dextri,the more northern of the three east of the right shoulder
+259,Media de tribus,the middle of the three
+260,Australior ipsarum,the more southern of them
+261,Sequens de tribus quasi supra mediam,"the eastern of the three, roughly above the middle one"
+262,Borealior de quatuor et est solitaria,"the more northern of the four, standing alone"
+263,Quae in extremitate maxillae est de illis quae in capite quadrilaterae sunt,"the one at the end of the jaw, of the quadrilateral on the head"
+264,Quae nares tangit,the one touching the nostrils
+265,Quae in tempore,the one on the temple
+266,Quae in radice colli,the one at the base of the neck
+267,Media quadrilateri et est in ore,"the middle of the quadrilateral, in the mouth"
+268,Exterior et ad septentrionem capitis,"the outer one, north of the head"
+269,Quae post primum colli flexum est,the one beyond the first bend of the neck
+270,Borealis de tribus deinceps sequentibus,the northern of the three in a row to the east
+271,Media de tribus,the middle of the three
+272,Australis ipsarum,the southern one of them
+273,Praecedens manum sinistram Ophiuchi post sequentem flexum,"the one west of Ophiuchus's left hand, beyond the eastern bend"
+274,Sequens eas quae in manu sunt,the one east of those on the hand
+275,Quae post posteriorem partem dextri cruris Ophiuchi,the one beyond the back of Ophiuchus's right leg
+276,Australior de duabus sequentibus istam,the more southern of the two east of that one
+277,Borealior ipsarum,the more northern of them
+278,Quae post manum dextram in flexu caudae,"the one beyond the right hand, on the bend of the tail"
+279,Quae istam sequitur et est in cauda similiter,"the one east of that one, likewise on the tail"
+280,Quae in extrema cauda est,the one at the end of the tail
+281,Quae in ferro sagittae solitaria est,the lone one on the arrowhead
+282,Sequens de tribus quae in arundine sunt,the eastern of the three on the reed
+283,Media ipsarum,the middle one of them
+284,Praecedens de tribus,the western of the three
+285,Quae in extremitate sagittae,the one at the tip of the arrow
+286,Quae in medio capite,the one in the middle of the head
+287,Quae istam praecedit et est in collo,"the one west of that one, on the neck"
+288,Fulgens quae in occipite et vocatur Aquila,"the bright one on the back of the head, called the Eagle"
+289,Quae prope hanc ad septentrionem est,"the one close to this, to the north"
+290,Praecedens de duabus quae sunt in humero sinistro,the western of the two on the left shoulder
+291,Quae istam sequitur,the one east of that one
+292,Praecedens de duabus quae sunt in humero dextro,the western of the two on the right shoulder
+293,Quae hanc sequitur,the one east of this
+294,Quae sub Aquilae cauda remotior est et lacteum circulum tangit,"the one further away below the Eagle's tail, touching the Milky Way"
+295,Praecedens de duabus quae sunt ab australi capitis parte,the western of the two on the southern part of the head
+296,Quae istam sequitur,the one east of that one
+297,Quae ab austro et africo dextri aquilae humeri est,the one to the south and southwest of the eagle's right shoulder
+298,Quae a meridie hujus est,the one south of this
+299,Quae australior hac adhuc est,the one still further south of this
+300,Quae cunctas praecedit,the one west of all of them
+301,Praecedens de tribus quae in cauda sunt,the western of the three on the tail
+302,Borealior de duabus reliquis,the more northern of the two remaining ones
+303,Australior ipsarum,the more southern of them
+304,Australis earum quae sunt in antecedente latere quadrilateri rhomboidis,the southern of those on the western side of the lozenge
+305,Borealior antecedentis lateris,the more northern star of the western side
+306,Australis sequentis lateris rhombi,the southern star of the lozenge's eastern side
+307,Borealis sequentis lateris,the northern star of the eastern side
+308,Australis de tribus quae sunt inter caudam et rhombum,the southern of the three between the tail and the lozenge
+309,Praecedens de duabus reliquis borealibus,the western of the two remaining northern ones
+310,Reliqua de ipsis et sequens,"the remaining, eastern one of them"
+311,Praecedens duarum quae sunt in capite,the western of the two on the head
+312,Quae ipsam sequitur,the one east of it
+313,Praecedens duarum quae in ore sunt,the western of the two in the mouth
+314,Quae ipsam sequitur,the one east of it
+315,Quae in umbilico est et communis cum capite Andromedae,"the one on the navel, shared with Andromeda's head"
+316,Quae in lumbis et extremitate pennae,"the one on the loins, at the tip of the wing"
+317,Quae in humero dextro et in ipsa pedis radice,"the one on the right shoulder, at the very top of the leg"
+318,Quae in occipite et humero alae,the one on the back of the head and the shoulder of the wing
+319,Borealior duarum quae sunt in corpore sub ala,the more northern of the two on the body under the wing
+320,Australior ipsarum,the more southern of them
+321,Borealior duarum quae in genu dextro sunt,the more northern of the two on the right knee
+322,Australior ipsarum,the more southern of them
+323,Antecedens duarum propinquarum quae in pectore sunt,the western of the two close together on the chest
+324,Sequens ipsarum,the eastern one of them
+325,Praecedens duarum propinquarum quae in collo sunt,the western of the two close together on the neck
+326,Sequens ipsarum,the eastern one of them
+327,Australior duarum quae in juba sunt,the more southern of the two in the mane
+328,Borealior ipsarum,the more northern of them
+329,Borealior duarum propinquarum quae in capite sunt,the more northern of the two close together on the head
+330,Australior ipsarum,the more southern of them
+331,Quae in rictu est,the one in the open jaws
+332,Quae in dextro talo,the one on the right ankle
+333,Quae in genu sinistro,the one on the left knee
+334,Quae in talo sinistro,the one on the left ankle
+335,Quae in occipite,the one on the back of the head
+336,Quae in humero dextro,the one on the right shoulder
+337,Quae in humero sinistro,the one on the left shoulder
+338,Australis de tribus quae sunt in dextro brachio,the southern of the three on the right arm
+339,Borealior ipsarum,the more northern of them
+340,Media de tribus,the middle of the three
+341,Australis de tribus quae sunt in extremitate manus dextrae,the southern of the three at the tip of the right hand
+342,Media ipsarum,the middle one of them
+343,Borealis de tribus,the northern of the three
+344,Quae in brachio sinistro,the one on the left arm
+345,Quae in cubito sinistro,the one on the left elbow
+346,Australior de tribus quae sunt supra cingulum,the more southern of the three above the belt
+347,Media ipsarum,the middle one of them
+348,Borealis de tribus,the northern of the three
+349,Quae supra pedem sinistrum,the one above the left foot
+350,Quae in pede dextro,the one on the right foot
+351,Australior hac,the one south of this
+352,Borealior duarum quae sunt in poplite sinistro,the more northern of the two behind the left knee
+353,Australior ipsarum,the more southern of them
+354,Quae in genu dextro,the one on the right knee
+355,Borealior duarum quae sunt in syrmate,the more northern of the two on the trailing robe
+356,Australior ipsarum,the more southern of them
+357,Exterior praecedensque de tribus quae sunt in extremitate manus dextrae,"the outer, western one of the three at the tip of the right hand"
+358,Quae in vertice trianguli est,the one at the apex of the triangle
+359,Praecedens de tribus quae sunt in basi,the western of the three on the base
+360,Media ipsarum,the middle one of them
+361,Sequens de tribus,the eastern of the three
+362,Praecedens duarum quae sunt in cornu,the western of the two on the horn
+363,Sequens ipsarum,the eastern one of them
+364,Borealior duarum quae in rictu sunt,the more northern of the two in the open jaws
+365,Australior ipsarum,the more southern of them
+366,Quae in collo est,the one on the neck
+367,Quae in lumbo est,the one on the loin
+368,Quae in radice caudae,the one at the root of the tail
+369,Praecedens de tribus quae in cauda sunt,the western of the three on the tail
+370,Media de tribus,the middle of the three
+371,Sequens ipsarum,the eastern one of them
+372,Quae in posteriore parte cruris est,the one on the back of the leg
+373,Quae sub poplite,the one below the back of the knee
+374,Quae in extremitate posterioris pedis,the one at the tip of the hind foot
+375,Quae supra caput est quam Hipparchus in collo dicit,"the one above the head, which Hipparchus places on the neck"
+376,Sequens fulgentiorque de quatuor quae supra lumbos sunt,"the eastern, brighter one of the four above the loins"
+377,Borealior reliquarum trium minusque splendidarum,"the more northern of the three remaining, fainter ones"
+378,Media de tribus,the middle of the three
+379,Australis ipsarum,the southern one of them
+380,Borealis de quatuor quae sunt in abscissione,the northern of the four at the cut-off end
+381,Sequens ipsam,the one east of it
+382,Quae istam adhuc sequitur,the one still further east of that one
+383,Australissima de quatuor,the most southern of the four
+384,Quae istas sequitur et est in dextra scapula,"the one east of these, on the right shoulder blade"
+385,Quae in pectore,the one on the chest
+386,Quae in genu dextro,the one on the right knee
+387,Quae in talo dextro,the one on the right ankle
+388,Quae in genu sinistro,the one on the left knee
+389,Quae in cubito sinistro,the one on the left elbow
+390,"De Hyades, sic enim vocantur quae in facie sunt, ea quae in naribus","of the Hyades, as the stars on the face are called, the one on the nostrils"
+391,Quae inter hanc et borealem oculum est,the one between this and the northern eye
+392,Quae inter istam et australem oculum,the one between that one and the southern eye
+393,"Fulgens de Hyades, et est in oculo australi subrufa","the bright one of the Hyades, on the southern eye, reddish"
+394,Reliqua quae est in oculo boreali,"the remaining one, in the northern eye"
+395,Quae est in radice australis cornu et in aure,"the one at the root of the southern horn, on the ear"
+396,Australior duarum quae sunt in cornu australi,the more southern of the two on the southern horn
+397,Borealior ipsarum,the more northern of them
+398,Quae est in extremitate cornu australis,the one at the tip of the southern horn
+399,Quae est in radice cornu borealis,the one at the root of the northern horn
+400,"Quae est in extremitate borealis cornu, eademque in dextro pede Aurigae","the one at the tip of the northern horn, the same as the one on the Charioteer's right foot"
+401,Borealior duarum propinquarum quae sunt in aure boreali,the more northern of the two close together on the northern ear
+402,Australior ipsarum,the more southern of them
+403,Praecedens duarum parvarum quae in collo sunt,the western of the two small ones on the neck
+404,Quae ipsam sequitur,the one east of it
+405,Australior antecedentis lateris quadrilaterae figurae quae in collo est,the more southern star of the western side of the quadrilateral on the neck
+406,Borealior antecedentis lateris,the more northern star of the western side
+407,Australior sequentis lateris,the more southern star of the eastern side
+408,Borealior sequentis lateris,the more northern star of the eastern side
+409,Borealis terminus antecedentis Pleiadum lateris,the northern end of the Pleiades' western side
+410,Australis terminus antecedentis lateris,the southern end of the western side
+411,Sequens et angustissimus Pleiadum terminus,"the eastern, narrowest tip of the Pleiades"
+412,Exterior et parva Pleiadum a septentrione,"the outer, small star of the Pleiades, to the north"
+413,Quae sub pede dextro est et scapula,the one below the right foot and the shoulder blade
+414,Praecedens de tribus quae supra cornu australe,the western of the three above the southern horn
+415,Media de tribus,the middle of the three
+416,Sequens ipsarum,the eastern one of them
+417,Borealior de duabus quae sunt sub extremitate cornu australis,the more northern of the two below the tip of the southern horn
+418,Australior ipsarum,the more southern of them
+419,Praecedens de quinque quae sub cornu boreali sequuntur,the western of the five that follow below the northern horn
+420,Quae istam sequitur,the one east of that one
+421,Quae istam adhuc sequitur,the one still further east of that one
+422,Borealior reliquarum duarum sequentium,the more northern of the two remaining eastern ones
+423,Australior ipsarum,the more southern of them
+424,Quae est in capite praecedentis Geminorum,the one on the head of the western Twin
+425,"Quae est in capite sequentis Geminorum, subrufa","the one on the head of the eastern Twin, reddish"
+426,Quae est in sinistro praecedentis Geminorum cubito,the one on the left elbow of the western Twin
+427,Quae in eodem brachio,the one on the same arm
+428,Quae ipsam sequitur et est in occipite,"the one east of it, on the back of the head"
+429,Quae istam sequitur et est in dextro humero ejusdem,"the one east of that one, on its right shoulder"
+430,Quae in humero sequenti sequentis Geminorum,the one on the eastern shoulder of the eastern Twin
+431,Quae in dextro latere antecedentis Geminorum,the one on the right side of the western Twin
+432,Quae in sinistro latere sequentis Geminorum,the one on the left side of the eastern Twin
+433,Quae in sinistro genu praecedentis Geminorum,the one on the left knee of the western Twin
+434,Quae sub sinistro genu sequentis Geminorum,the one below the left knee of the eastern Twin
+435,Quae in sinistra sequentis Geminorum axilla,the one in the left armpit of the eastern Twin
+436,Quae supra dextrum poplitem ejusdem Geminorum,the one above the back of the right knee of the same Twin
+437,Quae in extremo pede praecedentis Geminorum,the one at the tip of the foot of the western Twin
+438,Quae hanc in eodem pede sequitur,"the one east of this, on the same foot"
+439,Quae in extremitate dextri pedis praecedentis Geminorum,the one at the tip of the right foot of the western Twin
+440,Quae in extremitate sinistri pedis sequentis Geminorum,the one at the tip of the left foot of the eastern Twin
+441,Quae in extremitate dextri pedis sequentis Geminorum,the one at the tip of the right foot of the eastern Twin
+442,Praecedens extremitatem pedum antecedentis Geminorum,the one west of the feet of the western Twin
+443,Praecedens eam quae est in genu antecedentis Geminorum et est splendida,"the one west of the one on the knee of the western Twin, bright"
+444,Quae praecedit genu sinistrum sequentis Geminorum,the one west of the left knee of the eastern Twin
+445,Borealis trium sequentium dextram sequentis Geminorum perrectam lineam,the northern of the three in a straight line east of the right hand of the eastern Twin
+446,Media de tribus,the middle of the three
+447,Australis ipsarum et ad cubitum manus,"the southern one of them, at the elbow of the arm"
+448,Quae dictas tres sequitur et est splendida,the bright one east of the three mentioned
+449,Media nubiformis convolutionis quae in pectore dicta Praesepe,"the middle of the cloud-like cluster on the chest, called the Manger"
+450,"Borealior duarum praecedentium quadrilaterae figurae, quae est in nebula",the more northern of the two western stars of the quadrilateral in the nebula
+451,Australior praecedentium duarum,the more southern of the two western ones
+452,Borealis duarum sequentium quadrilaterae quae vocantur Aselli,"the northern of the quadrilateral's two eastern stars, called the Donkeys"
+453,Australis ipsarum,the southern one of them
+454,Quae in australi forfice,the one on the southern claw
+455,Quae in boreali forfice,the one on the northern claw
+456,Quae in posteriore pede boreali,the one on the northern hind foot
+457,Quae in posteriore pede australi,the one on the southern hind foot
+458,Quae super cubitum australis forficis est,the one above the elbow of the southern claw
+459,Quae sequitur extremitatem australis forficis,the one east of the tip of the southern claw
+460,Praecedens duarum sequentium quae sunt super nebulam,the western of the two eastern ones above the nebula
+461,Sequens ipsarum,the eastern one of them
+462,Quae in extremitate naris,the one at the tip of the nostril
+463,Quae in apertione oris,the one in the opening of the mouth
+464,Borealior duarum quae sunt in capite,the more northern of the two on the head
+465,Australior ipsarum,the more southern of them
+466,Borealis de tribus quae in collo sunt,the northern of the three on the neck
+467,Sequens et media de tribus,"the eastern, middle one of the three"
+468,Australis ipsarum,the southern one of them
+469,Quae est in corde et vocatur Regulus,"the one on the heart, called Regulus"
+470,Australior ipsa et est quasi in pectore,"the one south of it, roughly on the chest"
+471,Parum antecedens illam quae in corde est,the one a little west of the one on the heart
+472,Quae in genu dextro,the one on the right knee
+473,Quae in anteriore dextrae vola,the one on the right front paw
+474,Quae in anteriore sinistrae vola,the one on the left front paw
+475,Quae in genu sinistro,the one on the left knee
+476,Quae in axilla sinistra,the one in the left armpit
+477,Praecedens de tribus quae sunt in ventre,the western of the three on the belly
+478,Borealis reliquarum et sequentium duarum,the northern of the two remaining eastern ones
+479,Australior ipsarum,the more southern of them
+480,Praecedens de duabus quae sunt in lumbis,the western of the two on the loins
+481,Sequens ipsarum,the eastern one of them
+482,Borealior duarum quae sunt in vertebris,the more northern of the two on the hip joints
+483,Australior ipsarum,the more southern of them
+484,Quae in posterioribus cruribus,the one on the hind legs
+485,Quae in posterioribus poplitibus,the one behind the hind knees
+486,Australior hac et quasi in cubitis,"the one south of this, roughly at the elbows"
+487,Quae in posterioribus volis,the one on the hind paws
+488,Quae in extremitate caudae,the one at the end of the tail
+489,Praecedens de duabus quae sunt super scapulam,the western of the two above the shoulder blade
+490,Sequens ipsarum,the eastern one of them
+491,"Borealis de tribus, quae sunt sub latere",the northern of the three below the side
+492,Media ipsarum,the middle one of them
+493,Australis ipsarum,the southern one of them
+494,"Borealissimum convolutionis nubilosae quae Coma Berenices vocatur, et est inter extrema Leonis et Ursae","the most northern part of the cloudy cluster called Berenice's Hair, between the ends of the Lion and the Bear"
+495,Praecedens de australibus eminentibus Comae Berenices,the western of the southern prominent stars of Berenice's Hair
+496,Sequens de ipsis in figura folii edere,"the eastern one of them, in the shape of an ivy leaf"
+497,Australis de duabus quae sunt in extremo craneo Virginis,the southern of the two at the top of the Virgin's skull
+498,Borealior ipsarum,the more northern of them
+499,Borealior de sequentibus ipsas in facie,the more northern of those east of them on the face
+500,Australior ipsarum,the more southern of them
+501,Quae est in extremitate australis alae atque sinistrae,"the one at the tip of the southern, left wing"
+502,"Praecedens de quatuor, quae sunt in ala sinistra",the western of the four on the left wing
+503,Quae ipsam sequitur,the one east of it
+504,Quae adhuc istam sequitur,the one still further east of that one
+505,Ultima et sequens de quatuor,"the last, eastern one of the four"
+506,Quae est sub cingulo in dextro latere,"the one below the belt, on the right side"
+507,Praecedens de tribus quae in dextra borealique ala sunt,"the western of the three on the right, northern wing"
+508,Australis reliquarum duarum,the southern of the two remaining ones
+509,Borealis ipsarum et vocatur Previndemiatrix,"the northern one of them, called the Grape-gatherer's Herald"
+510,Quae in extremitate manus sinistrae et vocatur Spica,"the one at the tip of the left hand, called Spica"
+511,Quae sub cingulo juxta dextrum vertebrum,"the one below the belt, near the right hip joint"
+512,Borealis antecedentis lateris quadrilaterae figurae quae est in crure sinistro,the northern star of the western side of the quadrilateral on the left leg
+513,Australis antecedentis lateris,the southern star of the western side
+514,"Borealior de duabus, quae in sequenti latere sunt",the more northern of the two on the eastern side
+515,Australior lateris sequentis,the more southern star of the eastern side
+516,Quae in genu sinistro,the one on the left knee
+517,Quae in dextro crure posteriore,the one on the right hind leg
+518,Media de tribus quae sunt in syrmate,the middle of the three on the trailing robe
+519,Australis ipsarum,the southern one of them
+520,Borealis ipsarum,the northern one of them
+521,Quae in extremitate sinistri pedis atque australis,"the one at the tip of the left, southern foot"
+522,Quae in extremitate dextri pedis atque borealis,"the one at the tip of the right, northern foot"
+523,Praecedens de tribus quae ad rectam lineam sub sinistro cubito sunt,the western of the three in a straight line below the left elbow
+524,Media ipsarum,the middle one of them
+525,Sequens ipsarum,the eastern one of them
+526,Praecedens de tribus quae quasi ad rectam lineam sub Spica sunt,the western of the three in a nearly straight line below Spica
+527,Media ipsarum et duplex,"the middle one of them, double"
+528,Sequens trium,the eastern of the three
+529,Fulgens earum quae sunt in extremitate australis forficis,the bright one of those at the tip of the southern claw
+530,Borealior ipsa et minus splendida,"the one north of it, and less bright"
+531,Fulgens earum quae sunt in extremitate borealis forficis,the bright one of those at the tip of the northern claw
+532,Praecedens ipsas et obscura,the faint one west of them
+533,Quae est in medio australis forficis,the one in the middle of the southern claw
+534,Quae istam praecedit in eadem forfice,"the one west of that one, on the same claw"
+535,Quae est in medio borealis forficis,the one in the middle of the northern claw
+536,Quae istam in eadem forfice sequitur,"the one east of that one, on the same claw"
+537,Antecedens de tribus borealibus quae sunt in forfice boreali,the western of the three northern ones on the northern claw
+538,Australis sequentium duarum,the southern of the two eastern ones
+539,Borealis ipsarum,the northern one of them
+540,Sequens de tribus intermediis,the eastern of the three in between
+541,Borealis reliquarum duarum praecedentium,the northern of the two remaining western ones
+542,Australis ipsarum,the southern one of them
+543,"Praecedens de tribus australioribus, quae sunt in forfice australi",the western of the three more southern ones on the southern claw
+544,Borealior duarum reliquarum sequentium,the more northern of the two remaining eastern ones
+545,Australior ipsarum,the more southern of them
+546,"Borealis de tribus splendidis, quae sunt in fronte",the northern of the three bright ones on the forehead
+547,Media ipsarum,the middle one of them
+548,Australior de tribus,the more southern of the three
+549,Australior adhuc ista in altero pedum,"the one still further south of that one, on the other foot"
+550,"Borealior duarum, quae borealissimae splendidarum adhaeret",the more northern of the two next to the most northern bright one
+551,Australis ipsarum,the southern one of them
+552,"Praecedens de tribus splendidis, quae sunt in corpore",the western of the three bright ones on the body
+553,Media ipsarum et subrufa quae vocatur Antares,"the middle one of them, reddish, called Antares"
+554,Sequens de tribus,the eastern of the three
+555,Praecedens duarum quae sub ipsis in extremo pede sunt,"the western of the two below them, at the tip of the foot"
+556,Sequens ipsarum,the eastern one of them
+557,Quae in primo spondilo a corpore,the one on the first joint from the body
+558,Quae post hanc in secundo spondilo,"the one beyond this, on the second joint"
+559,Borealis de binis quae in tertio spondilo sunt,the northern of the pair on the third joint
+560,Australior de binis,the more southern of the pair
+561,Quae deinceps in quarto spondilo est,"the next one, on the fourth joint"
+562,Quae post ipsam in quinto spondilo est,"the one beyond it, on the fifth joint"
+563,Quae deinceps in sexto spondilo,"the next one, on the sixth joint"
+564,Quae in septimo spondilo juxta aculeum,"the one on the seventh joint, by the sting"
+565,Sequens de duabus quae in aculeo sunt,the eastern of the two on the sting
+566,Praecedens ipsarum,the western one of them
+567,Quae aculeum sequitur et est nebulosa,the nebulous one east of the sting
+568,"Praecedens duarum, quae a septentrione aculei sunt",the western of the two north of the sting
+569,Sequens ipsarum,the eastern one of them
+570,Quae in ferro sagittae,the one on the arrowhead
+571,Quae in capulo sinistrae manus est,the one on the hilt in the left hand
+572,Quae in australi parte Sagittarii est,the one on the southern part of the Archer
+573,Australior earum quae sunt in boreali parte Sagittarii,the more southern of those on the northern part of the Archer
+574,Borealior ipsarum et in extremitate arcus,"the more northern of them, at the tip of the bow"
+575,Quae in humero sinistro,the one on the left shoulder
+576,Quae hanc praecedit et est in sagitta,"the one west of this, on the arrow"
+577,Quae in oculo est nebulosa et bina,"the nebulous, double one in the eye"
+578,Praecedens de tribus quae sunt in capite,the western of the three on the head
+579,Media ipsarum,the middle one of them
+580,Sequens de tribus,the eastern of the three
+581,"Australior de tribus, quae in boreali interscapilio sunt",the more southern of the three on the northern part of the back
+582,Media ipsarum,the middle one of them
+583,Borealis ipsarum,the northern one of them
+584,Obscura quae tres istas sequitur,the faint one east of those three
+585,Borealior de duabus quae in australi interscapilio sunt,the more northern of the two on the southern part of the back
+586,Australior ipsarum,the more southern of them
+587,Quae in humero dextro,the one on the right shoulder
+588,Quae in cubito dextro,the one on the right elbow
+589,"De tribus quae sunt in scapula, quae prope occiput est","of the three on the shoulder blade, the one near the back of the head"
+590,Media ipsarum et in ipsa latitudine scapulae,"the middle one of them, across the breadth of the shoulder blade"
+591,Reliqua et quasi sub axilla,"the remaining one, roughly under the armpit"
+592,Quae in anteriori sinistro talo,the one on the left front ankle
+593,Quae in genu ejusdem pedis,the one on the knee of the same leg
+594,Quae in anteriori dextro talo,the one on the right front ankle
+595,Quae in crure sinistro,the one on the left leg
+596,Quae in posteriore dextro cubito,the one on the right hind elbow
+597,Praecedens borealis lateris de quatuor quae sunt in radice caudae,the western star of the northern side of the four at the root of the tail
+598,Sequens borealis lateris,the eastern star of the northern side
+599,Antecedens australis lateris,the western star of the southern side
+600,Sequens australis lateris,the eastern star of the southern side
+601,Borealis de tribus quae sunt in sequenti cornu,the northern of the three on the eastern horn
+602,Media ipsarum,the middle one of them
+603,Australis de tribus,the southern of the three
+604,Quae in extremitate antecedentis cornu est,the one at the tip of the western horn
+605,Australis de tribus quae sunt in rictu,the southern of the three in the open jaws
+606,Praecedens reliquarum duarum,the western of the two remaining ones
+607,Sequens ipsarum,the eastern one of them
+608,Praecedens de tribus quae sunt sub oculo dextro,the western of the three below the right eye
+609,Borealior duarum quae sunt in collo,the more northern of the two on the neck
+610,Australior earum,the more southern of them
+611,Quae sub genu dextro,the one below the right knee
+612,Quae est in genu sinistro atque flexo,"the one on the left, bent knee"
+613,Quae in humero sinistro,the one on the left shoulder
+614,Praecedens duarum contiguarum quae sunt sub ventre,the western of the two close together under the belly
+615,Sequens ipsarum,the eastern one of them
+616,Sequens de tribus quae sunt in medio corpore,the eastern of the three in the middle of the body
+617,Australior reliquarum duarum antecedentium,the more southern of the two remaining western ones
+618,Borealior ipsarum,the more northern of them
+619,"Antecedens duarum, quae sunt in scapula",the western of the two on the shoulder blade
+620,Sequens ipsarum,the eastern one of them
+621,"Antecedens duarum, quae sunt in spina australi",the western of the two on the southern spine
+622,Sequens ipsarum,the eastern one of them
+623,"Antecedens duarum, quae sunt apud caudam",the western of the two by the tail
+624,Sequens ipsarum,the eastern one of them
+625,"Antecedens de quatuor, quae sunt in boreali caudae parte",the western of the four on the northern part of the tail
+626,Australis reliquarum trium,the southern of the three remaining ones
+627,Media ipsarum,the middle one of them
+628,Borealis ipsarum,the northern one of them
+629,Quae est in capite Aquarii,the one on the Water-bearer's head
+630,"Fulgentior duarum, quae sunt in humero dextro",the brighter of the two on the right shoulder
+631,Quae sub ipsa obscurior,the fainter one below it
+632,Quae in humero sinistro,the one on the left shoulder
+633,Quae sub ipsa in scapula et quasi sub axilla,"the one below it on the shoulder blade, roughly under the armpit"
+634,"Sequens de tribus, quae sunt in vestimento manus sinistrae",the eastern of the three on the garment in the left hand
+635,Media ipsarum,the middle one of them
+636,Antecedens de tribus,the western of the three
+637,Quae in cubito dextro,the one on the right elbow
+638,"Borealis de tribus, quae sunt in extremitate manus dextrae",the northern of the three at the tip of the right hand
+639,Antecedens duarum reliquarum et borealium,the western of the two remaining northern ones
+640,Sequens ipsarum,the eastern one of them
+641,"Praecedens duarum contiguarum, quae sunt in dextro vertebro",the western of the two close together on the right hip joint
+642,Sequens ipsarum,the eastern one of them
+643,Quae in dextro clune,the one on the right haunch
+644,Australis duarum quae sunt in sinistro clune,the southern of the two on the left haunch
+645,Borealior ipsarum,the more northern of them
+646,Australior duarum quae sunt in tibia dextra,the more southern of the two on the right shin
+647,Borealior ipsarum et est sub poplite,"the more northern of them, below the back of the knee"
+648,"Quae, in posteriori sinistri cruris parte",the one on the back of the left leg
+649,Australior duarum quae sunt in tibia sinistra,the more southern of the two on the left shin
+650,Borealior ipsarum et est sub genu,"the more northern of them, below the knee"
+651,Antecedens duarum quae sunt in ipso aquae fluxu a manu,the western of the two in the stream of water from the hand
+652,Quae istam ex austro sequitur,"the one east of that one, to the south"
+653,Adhuc quae istam sequitur et est post flexum,"the one still further east of that one, beyond the bend"
+654,Quae istam adhuc sequitur,the one still further east of that one
+655,Quae est in flexu a meridie istius,the one on the bend south of that one
+656,Borealior duarum quae adhuc a meridie istius sunt,the more northern of the two still further south of that one
+657,Australior ipsarum,the more southern of them
+658,Solitaria ad meridiem istarum,the lone one south of these
+659,Antecedens duarum contiguarum post ipsam,the western of the two close together beyond it
+660,Sequens ipsarum,the eastern one of them
+661,Borealis de tribus quae sunt in convolutione sequenti,the northern of the three in the eastern coil
+662,Media de tribus,the middle of the three
+663,Sequens ipsarum,the eastern one of them
+664,Borealis de tribus quae deinceps similiter sunt,the northern of the three likewise in a row
+665,Media ipsarum,the middle one of them
+666,Australior ipsis de tribus,"the one south of them, of the three"
+667,"Praecedens de tribus, quae sunt in reliqua convolutione",the western of the three in the remaining coil
+668,Australior reliquarum duarum,the more southern of the two remaining ones
+669,Borealior ipsarum,the more northern of them
+670,Aquae ipsius ultima et est in ore Piscis Austrinus,"the last of the water itself, in the mouth of the Southern Fish"
+671,"Praecedens de tribus, quae flexum id est curvaturam aquae sequuntur","the western of the three that follow the bend, that is, the curve of the water"
+672,Borealior reliquarum duarum,the more northern of the two remaining ones
+673,Australior ipsarum,the more southern of them
+674,Quae in antecedentis Piscis ore,the one in the mouth of the western Fish
+675,Australior duarum quae sunt in cranio ejus,the more southern of the two on its skull
+676,Borealior ipsarum,the more northern of them
+677,Antecedens duarum quae sunt in dorso,the western of the two on the back
+678,Sequens ipsarum,the eastern one of them
+679,Antecedens duarum quae sunt in ventre,the western of the two on the belly
+680,Sequens ipsarum,the eastern one of them
+681,Quae est in cauda Piscis ejusdem,the one on the tail of the same Fish
+682,Prima post caudam in lino,the first on the cord after the tail
+683,Sequens ipsarum,the eastern one of them
+684,"Antecedens de tribus splendidis, quae deinceps sunt",the western of the three bright ones in a row
+685,Media ipsarum,the middle one of them
+686,Sequens de tribus,the eastern of the three
+687,"Borealior duarum parvarum, quae sub ipsis in flexu sunt","the more northern of the two small ones below them, in the bend"
+688,Australior ipsarum,the more southern of them
+689,Praecedens de tribus quae sunt post flexum,the western of the three beyond the bend
+690,Media ipsarum,the middle one of them
+691,Sequens de tribus,the eastern of the three
+692,Quae est in nodo linorum duorum,the one on the knot of the two cords
+693,Antecedens earum quae sunt a nodo in boreali lino,the western of those from the knot along the northern cord
+694,Australis de tribus quae deinceps post ipsam sunt,the southern of the three in a row beyond it
+695,Media ipsarum,the middle one of them
+696,Borealis de tribus et est in extremitate caudae,"the northern of the three, at the end of the tail"
+697,Borealior duarum quae sunt in ore piscis sequentis,the more northern of the two in the mouth of the eastern Fish
+698,Australior ipsarum,the more southern of them
+699,Sequens de tribus parvis quae sunt in capite,the eastern of the three small ones on the head
+700,Media ipsarum,the middle one of them
+701,Antecedens de tribus,the western of the three
+702,"Praecedens de tribus quae in australi spina, post cubitum Andromedae","the western of the three on the southern spine, beyond Andromeda's elbow"
+703,Media ipsarum,the middle one of them
+704,Sequens ipsarum,the eastern one of them
+705,Borealior duarum quae sunt in ventre,the more northern of the two on the belly
+706,Australior ipsarum,the more southern of them
+707,Quae est in spina sequenti juxta caudam,the one on the eastern spine near the tail
+708,Praecedens de duabus borealibus quadrilaterae figurae quae est sub Pisce antecedente,the western of the two northern stars of the quadrilateral below the western Fish
+709,Sequens earum,the eastern one of them
+710,Praecedens australis lateris,the western star of the southern side
+711,Sequens australis lateris,the eastern star of the southern side
+712,Quae in extremitate naris,the one at the tip of the nostril
+713,"Sequens de tribus quae sunt in rictu, et est in extrema maxilla","the eastern of the three in the open jaws, at the end of the jaw"
+714,Media ipsarum et est in ore medio,"the middle one of them, in the middle of the mouth"
+715,Praecedens de tribus et est in mento,"the western of the three, on the chin"
+716,Quae est in supercilio et in oculo,the one on the eyebrow and in the eye
+717,Borealior hac et est quasi in capillis,"the one north of this, roughly in the hair"
+718,"Praecedens hanc, et est quasi in juba","the one west of this, roughly in the mane"
+719,Borealis antecedentis lateris quadrilaterae figurae quae est in pectore,the northern star of the western side of the quadrilateral on the chest
+720,Australis antecedentis lateris,the southern star of the western side
+721,Borealis sequentis lateris,the northern star of the eastern side
+722,Australis sequentis lateris,the southern star of the eastern side
+723,Media de tribus quae sunt in corpore,the middle of the three on the body
+724,Australis ipsarum,the southern one of them
+725,Borealis de tribus,the northern of the three
+726,Sequens duarum quae sunt juxta caudam,the eastern of the two near the tail
+727,Antecedens ipsarum,the western one of them
+728,"Borealis sequentis lateris figurae quadrilaterae, quae est in cauda",the northern star of the eastern side of the quadrilateral on the tail
+729,Australis sequentis lateris,the southern star of the eastern side
+730,Borealis praecedentis lateris,the northern star of the western side
+731,Australis praecedentis lateris,the southern star of the western side
+732,"De duabus quae sunt in extremis caudae, quae in boreali est","of the two at the end of the tail, the northern one"
+733,Quae in extremitate australi caudae,the one at the southern end of the tail
+734,Nebulosa quae in capite Orionis est,the nebulous one on Orion's head
+735,Splendida quae in humero dextro et est subrufa,"the bright one on the right shoulder, reddish"
+736,Quae in humero sinistro,the one on the left shoulder
+737,Quae sub ista sequitur,the one that follows below that one
+738,Quae est in cubito dextro,the one on the right elbow
+739,Quae in brachio dextro,the one on the right arm
+740,Sequens et bina australis lateris figurae quadrilaterae quae est in extremitate manus dextrae,"the eastern, double star of the southern side of the quadrilateral at the tip of the right hand"
+741,Antecedens australis lateris,the western star of the southern side
+742,Sequens borealis lateris,the eastern star of the northern side
+743,Praecedens borealis lateris,the western star of the northern side
+744,Praecedens de duabus quae sunt in collorobo,the western of the two on the crook
+745,Sequens ipsarum,the eastern one of them
+746,Sequens de quatuor quae sunt in scapula quasi ad rectam lineam,the eastern of the four in a nearly straight line on the shoulder blade
+747,Praecedens istam,the one west of that one
+748,Quae adhuc hanc praecedit,the one still further west of this
+749,Reliqua et antecedens de quatuor,"the remaining, western one of the four"
+750,Borealissima earum quae sunt in pelle manus sinistrae,the most northern of those on the pelt in the left hand
+751,Secunda a borealissima,the second from the most northern
+752,Tertia a borealissima,the third from the most northern
+753,Quarta a borealissima,the fourth from the most northern
+754,Quinta a borealissima,the fifth from the most northern
+755,Sexta a borealissima,the sixth from the most northern
+756,Septima a borealissima,the seventh from the most northern
+757,Octava a borealissima,the eighth from the most northern
+758,Reliqua et australissima earum quae sunt in pelle,"the remaining, most southern one of those on the pelt"
+759,Antecedens de tribus quae sunt in cingulo,the western of the three on the belt
+760,Media ipsarum,the middle one of them
+761,Sequens de tribus,the eastern of the three
+762,Quae in ensis capulo,the one on the sword's hilt
+763,Borealis de tribus conjunctis quae sunt in ensis extremitate,the northern of the three joined together at the tip of the sword
+764,Media ipsarum,the middle one of them
+765,Australis de tribus,the southern of the three
+766,Sequens de duabus quae sunt sub ensis extremitate,the eastern of the two below the tip of the sword
+767,Praecedens ipsarum,the western one of them
+768,Splendida quae est in extremitate pedis sinistri communis cum aqua,"the bright one at the tip of the left foot, shared with the water"
+769,Borealior ipsarum supra talum in tibia,"the more northern of them, on the shin above the ankle"
+770,Exterior sub sinistro calcaneo,the outer one below the left heel
+771,Quae sub dextro et sequenti genu,"the one below the right, eastern knee"
+772,Quae post illam quae est in extremo pede Orionis in principio fluvii,"the one beyond the one at the tip of Orion's foot, at the start of the river"
+773,Borealior hac in flexu juxta suram Orionis,"the one north of this, in the bend near Orion's calf"
+774,Sequens de duabus quae post istam deinceps sunt,the eastern of the two in a row beyond that one
+775,Praecedens ipsarum,the western one of them
+776,Sequens duarum quae rursus deinceps sunt,the eastern of the two again in a row
+777,Praecedens ipsarum,the western one of them
+778,Sequens de tribus quae post ipsam sunt,the eastern of the three beyond it
+779,Media ipsarum,the middle one of them
+780,Praecedens de tribus,the western of the three
+781,Sequens de quatuor quae parum deinceps distant,the eastern of the four in a row a little apart
+782,Praecedens istam,the one west of that one
+783,Praecedens adhuc istam,the one still further west of that one
+784,Praecedens de quatuor,the western of the four
+785,Sequens de quatuor quae parum deinceps distantia distant,the eastern of the four in a row a little apart
+786,Praecedens istam,the one west of that one
+787,Praecedens adhuc istam,the one still further west of that one
+788,Praecedens de quatuor,the western of the four
+789,"Quae in flexu fluvii est, primumque tangit pectus Ceti","the one at the bend of the river, where it first touches the Sea-monster's chest"
+790,Sequens istam,the one east of that one
+791,Praecedens de tribus quae deinceps sunt,the western of the three in a row
+792,Media ipsarum,the middle one of them
+793,Sequens de tribus,the eastern of the three
+794,Borealis antecedentis lateris de quatuor quae deinceps quasi quadrangulum faciunt,the northern star of the western side of the four in a row that roughly form a square
+795,Australior antecedentis lateris,the more southern star of the western side
+796,Antecedens sequentis lateris,the western star of the eastern side
+797,Sequens hujus lateris et reliqua de quatuor,"the eastern star of this side, the remaining one of the four"
+798,Borealis de duabus contiguis quae ab istis ad ortum distant,the northern of the two close together some way east of these
+799,Australior ipsarum,the more southern of them
+800,Sequens duarum quae deinceps post flexum sunt,the eastern of the two in a row beyond the bend
+801,Praecedens ipsarum,the western one of them
+802,Sequens de tribus quae deinceps in nonnulla distantia sunt,"the eastern of the three in a row, some distance apart"
+803,Media ipsarum,the middle one of them
+804,Praecedens de tribus,the western of the three
+805,Ultima fluvii et est splendida,"the last of the river, bright"
+806,Borealis antecedentis lateris quadrangulae figurae quae in auribus,the northern star of the western side of the square on the ears
+807,Australis antecedentis lateris,the southern star of the western side
+808,Borealis sequentis lateris,the northern star of the eastern side
+809,Australis sequentis lateris,the southern star of the eastern side
+810,Quae in mento est,the one on the chin
+811,Quae in extremitate anterioris sinistri pedis,the one at the tip of the left front foot
+812,Quae in medio corpore,the one in the middle of the body
+813,Quae sub ventre,the one under the belly
+814,"Borealior duarum, quae sunt in posterioribus pedibus",the more northern of the two on the hind feet
+815,Australior ipsarum,the more southern of them
+816,Quae in lumbis,the one on the loins
+817,Quae in extremitate caudae,the one at the end of the tail
+818,"Quae in ore fulgentissima est, et vocatur Sirius, et est subrufa","the brightest one, in the mouth, called Sirius, reddish"
+819,Quae in auribus,the one on the ears
+820,Quae in capite,the one on the head
+821,Borealis duarum quae sunt in collo,the northern of the two on the neck
+822,Australis ipsarum,the southern one of them
+823,Quae pectore,the one on the chest
+824,Borealis duarum quae sunt in genu dextro,the northern of the two on the right knee
+825,Australior ipsarum,the more southern of them
+826,Quae in extremitate anterioris pedis,the one at the tip of the front foot
+827,Antecedens duarum quae sunt in genu sinistro,the western of the two on the left knee
+828,Sequens ipsarum,the eastern one of them
+829,Sequens duarum quae sunt in humero sinistro,the eastern of the two on the left shoulder
+830,Praecedens ipsarum,the western one of them
+831,Quae est in cruris sinistri radice,the one at the top of the left leg
+832,Quae sub ventre inter crura,"the one under the belly, between the legs"
+833,Quae in poplite pedis dextri,the one behind the knee of the right leg
+834,Quae in extremitate pedis dextri,the one at the tip of the right foot
+835,Quae in cauda,the one on the tail
+836,Quae a septentrione capite canis,the one north of the dog's head
+837,Australissima de quatuor quae sunt sub posterioribus pedibus quasi ad rectam lineam,the most southern of the four in a nearly straight line under the hind feet
+838,Borealior hac,the one north of this
+839,Borealior adhuc ista,the one still further north of that one
+840,Reliqua et borealior de quatuor,"the remaining, more northern one of the four"
+841,Praecedens de tribus quae sunt ad occasum rerum istarum quatuor quasi ad rectam lineam,the western of the three in a nearly straight line west of those four
+842,Media ipsarum,the middle one of them
+843,Sequens de tribus,the eastern of the three
+844,Sequens de duabus splendidis quae sub istis,the eastern of the two bright ones below these
+845,Praecedens ipsarum,the western one of them
+846,Reliqua et australior supradictis,"the remaining one, south of those above"
+847,Quae in collo,the one on the neck
+848,Fulgens quae est in posterioribus et vocatur Procyon,"the bright one on the hindquarters, called Procyon"
+849,Praecedens duarum quae sunt in extremitate navis,the western of the two at the end of the ship
+850,Sequens earum,the eastern one of them
+851,Borealior duarum contiguarum quae sunt supra scutulum in puppi,the more northern of the two close together above the small shield on the stern
+852,Australior ipsarum,the more southern of them
+853,Praecedens istarum,the western one of these
+854,Splendida quae est in medio scutulo,the bright one in the middle of the small shield
+855,Praecedens de tribus quae sunt sub scutulo,the western of the three below the small shield
+856,Sequens ipsarum,the eastern one of them
+857,Media de tribus,the middle of the three
+858,Quae in chenisco sive anserculo est,the one on the gooseneck ornament
+859,Borealior duarum quae sunt in carina puppis,the more northern of the two on the keel of the stern
+860,Australior ipsarum,the more southern of them
+861,Borealior earum sunt in foris puppis,the more northern of those on the stern's deck
+862,Praecedens de tribus quae deinceps sunt,the western of the three in a row
+863,Media ipsarum,the middle one of them
+864,Sequens de tribus,the eastern of the three
+865,Splendida quae istas in foris sequitur,"the bright one east of these, on the deck"
+866,Praecedens de duabus quae sunt sub splendida,the western of the two below the bright one
+867,Sequens ipsarum,the eastern one of them
+868,Praecedens de duabus quae sunt supra splendidam dictam,the western of the two above the bright one mentioned
+869,Sequens ipsarum,the eastern one of them
+870,Borealis de tribus quae sunt in scutulis et est quasi in malo,"the northern of the three on the small shields, roughly on the mast"
+871,Media ipsarum,the middle one of them
+872,Australis de tribus,the southern of the three
+873,Borealior de duabus contiguis quae sunt sub istis,the more northern of the two close together below these
+874,Australior ipsarum,the more southern of them
+875,"Australis de duabus, quae sunt in medio malo",the southern of the two in the middle of the mast
+876,Borealior ipsarum,the more northern of them
+877,Praecedens de duabus quae sunt in extremitate mali,the western of the two at the top of the mast
+878,Sequens ipsarum,the eastern one of them
+879,Quae est sub tertia in sequento scutulo,"the one below the third, on the eastern small shield"
+880,Quae in abscessione fororum est,the one where the deck is cut off
+881,Quae inter gubernacula in carina,the one on the keel between the steering oars
+882,Sequens istam obscura,the faint one east of that one
+883,Splendida sequens istam sub foris,"the bright one east of that one, below the deck"
+884,Splendida quae ad meridiem istam sequuntur,"the bright one following that one, to the south"
+885,"Antecedens de tribus, quae istam sequuntur",the western of the three east of that one
+886,Media ipsarum,the middle one of them
+887,Sequens de tribus,the eastern of the three
+888,Praecedens de duabus sequentibus has juxta abscissionem,"the western of the two east of these, near the cut-off end"
+889,Sequens ipsarum,the eastern one of them
+890,Antecedens de duabus quae sunt in boreali et praecedenti gubernaculo,"the western of the two on the northern, western steering oar"
+891,Sequens ipsarum,the eastern one of them
+892,Praecedens duarum reliquarum in gubernaculo et vocatur Canopus,"the western of the two remaining ones on the steering oar, called Canopus"
+893,Reliqua et sequens ipsarum,"the remaining, eastern one of them"
+894,Australis duarum praecedentum quae sunt in capite et est in naribus,"the southern of the two western ones on the head, at the nostrils"
+895,Borealis ipsarum et est supra oculum,"the northern one of them, above the eye"
+896,Borealis de duabus sequentibus et est quasi in cranio,"the northern of the two eastern ones, roughly on the skull"
+897,Australior ipsarum et est in oris hiatu,"the more southern of them, in the open mouth"
+898,Quae omnes istas sequitur et est quasi in mento,"the one east of all these, roughly on the chin"
+899,Praecedens duarum quae sunt in radice colli,the western of the two at the base of the neck
+900,Sequens ipsarum,the eastern one of them
+901,Media de tribus quae deinceps in flexu colli sunt,the middle of the three in a row on the bend of the neck
+902,Sequens de tribus,the eastern of the three
+903,Australissima ipsarum,the most southern of them
+904,Borealis et obscura de duabus contiguis quae sunt ab austro,"the northern, faint one of the two close together to the south"
+905,Splendida de duabus contiguis,the bright one of the two close together
+906,Praecedens de tribus sequentibus post flexum,the western of the three that follow beyond the bend
+907,Media ipsarum,the middle one of them
+908,Sequens de tribus,the eastern of the three
+909,Praecedens de tribus quae deinceps quasi ad rectam lineam sunt,the western of the three in a nearly straight row
+910,Media ipsarum,the middle one of them
+911,Sequens de tribus,the eastern of the three
+912,Borealis de duabus quae sunt post basim Craterae,the northern of the two beyond the base of the Bowl
+913,Australior ipsarum,the more southern of them
+914,Praecedens de tribus post istas quae sunt quasi in triangulo,"the western of the three beyond these, roughly in a triangle"
+915,Media et australior ipsarum,"the middle, more southern one of them"
+916,Sequens de tribus,the eastern of the three
+917,Quae post corvum est prope caudam,"the one beyond the Raven, near the tail"
+918,Quae in extremitate caudae,the one at the end of the tail
+919,Quae a meridie capitis,the one south of the head
+920,Sequens eas quae in collo sunt non multum ab illis distans,"the one east of those on the neck, not far from them"
+921,Quae in basi Craterae est communis cum Hydro,"the one on the base of the Bowl, shared with the Water-snake"
+922,Australior de duabus quae sunt in medio Craterae,the more southern of the two in the middle of the Bowl
+923,Borealior ipsarum,the more northern of them
+924,Quae est in australi arcu oris,the one on the southern curve of the mouth
+925,Quae est in boreali arcu oris,the one on the northern curve of the mouth
+926,Quae est in ansa australi,the one on the southern handle
+927,Quae est in ansa boreali,the one on the northern handle
+928,Quae in rostro communis cum Hydro,"the one on the beak, shared with the Water-snake"
+929,Quae est in collo juxta caput,"the one on the neck, next to the head"
+930,Quae in pectore,the one on the chest
+931,Quae in antecedente dextraque ala,"the one on the western, right wing"
+932,Praecedens de duabus quae sunt in ala sequenti,the western of the two on the eastern wing
+933,Sequens ipsarum,the eastern one of them
+934,Quae in extremo pede communis cum Hydro,"the one at the tip of the foot, shared with the Water-snake"
+935,Australissima de quatuor quae sunt in capite,the most southern of the four on the head
+936,Borealior ipsarum,the more northern of them
+937,Antecedens de duabus reliquis et mediis,the western of the two remaining middle ones
+938,Sequens ipsarum et reliqua de quatuor,"the eastern one of them, the remaining one of the four"
+939,Quae in sinistro antecedentique humero,"the one on the left, western shoulder"
+940,Quae in humero dextro,the one on the right shoulder
+941,Quae in sinistra scapula,the one on the left shoulder blade
+942,Borealior de duabus praecedentibus quae sunt in Thyrso,the more northern of the two western ones on the thyrsus staff
+943,Australior ipsarum,the more southern of them
+944,De reliquis duabus quae est in extremo Thyrsi,"of the two remaining ones, the one at the top of the thyrsus staff"
+945,Reliqua et australior hac,"the remaining one, south of this"
+946,Praecedens de tribus quae sunt in dextro latere,the western of the three on the right side
+947,Media ipsarum,the middle one of them
+948,Sequens de tribus,the eastern of the three
+949,Quae est dextro brachio,the one on the right arm
+950,Quae in dextro cubito,the one on the right elbow
+951,Quae in extremitate manus dextrae,the one at the tip of the right hand
+952,Splendida quae est in conjunctione humani corporis,the bright one where the human body joins
+953,"Sequens de duabus obscuris, quae sunt borealiores hac",the eastern of the two faint ones north of this
+954,Praecedens ipsarum,the western one of them
+955,Quae est in principio scapulae,the one at the start of the shoulder blade
+956,Antecedens hanc in dorso equi,"the one west of this, on the horse's back"
+957,Sequens de tribus quae sunt in lumbis,the eastern of the three on the loins
+958,Media ipsarum,the middle one of them
+959,Antecedens de tribus,the western of the three
+960,Praecedens de duabus contiguis quae sunt in crure dextro,the western of the two close together on the right leg
+961,Sequens ipsarum,the eastern one of them
+962,Quae in pectore sub axilla equi,"the one on the chest, under the horse's armpit"
+963,Praecedens de duabus quae sunt sub ventre,the western of the two under the belly
+964,Sequens ipsarum,the eastern one of them
+965,Quae est in poplite pedis dextri,the one behind the knee of the right leg
+966,Quae est in talo ejusdem pedis,the one on the ankle of the same foot
+967,Quae sub poplite sinistri pedis,the one below the back of the left knee
+968,Quae in sura ejusdem pedis,the one on the calf of the same leg
+969,Quae in extremo anterioris dextri pedis,the one at the tip of the right front foot
+970,Quae in genu sinistri pedis,the one on the knee of the left leg
+971,Quae est extra sub dextro posteriore pede,"the one outside, below the right hind foot"
+972,Quae in extremo posteriore pede apud manum Centauri,"the one at the tip of the hind foot, by the Centaur's hand"
+973,Quae in poplite ejusdem pedis,the one behind the knee of the same leg
+974,Praecedens de duabus quae sunt in scapula,the western of the two on the shoulder blade
+975,Sequens earum,the eastern one of them
+976,Quae in medio ferae corpore,the one in the middle of the beast's body
+977,Quae in ventre sub latere,"the one on the belly, below the side"
+978,Quae in crure,the one on the leg
+979,Borealior de duabus quae sunt juxta radicem cruris,the more northern of the two near the top of the leg
+980,Australior ipsarum,the more southern of them
+981,Quae in extremis lumbis,the one at the end of the loins
+982,Australis de tribus quae sunt in extrema cauda,the southern of the three at the end of the tail
+983,Media de tribus,the middle of the three
+984,Borealior ipsarum,the more northern of them
+985,Australior de duabus quae sunt in collo,the more southern of the two on the neck
+986,Borealior ipsarum,the more northern of them
+987,Praecedens de duabus quae sunt in rictu,the western of the two in the open jaws
+988,Sequens ipsarum,the eastern one of them
+989,Australior de duabus quae sunt in anteriore pede,the more southern of the two on the front foot
+990,Borealior ipsarum,the more northern of them
+991,Borealior de duabus quae sunt in basi,the more northern of the two on the base
+992,Australior ipsarum,the more southern of them
+993,Quae est in media arae,the one in the middle of the altar
+994,Borealis de tribus quae sunt in foco,the northern of the three on the hearth
+995,Australior reliquarum et contiguarum duarum,the more southern of the two remaining ones close together
+996,Borealior ipsarum,the more northern of them
+997,Quae est in extremitate,the one at the tip
+998,Antecedens extra australem arcum,the western one outside the southern arc
+999,Quae ipsam sequitur et est in corona,"the one east of it, in the crown"
+1000,Quae istam sequitur,the one east of that one
+1001,Sequens adhuc istam,the one still further east of that one
+1002,Quae post istam est ante Sagittarii genu,"the one beyond that one, in front of the Archer's knee"
+1003,Quae post istam est borealior quam fulgens quae est in genu,"the one beyond that one, north of the bright one on the knee"
+1004,Borealior hac,the one north of this
+1005,Adhuc borealior ista,the one still further north of that one
+1006,Sequens de duabus praecedentibus istam in boreali arcu,the eastern of the two west of that one on the northern arc
+1007,Praecedens de duabus obscuris,the western of the two faint ones
+1008,Hanc etiam satis praecedens,the one well west of this too
+1009,Adhuc istam praecedens,the one still further west of that one
+1010,Reliqua et australior quam supradicta,"the remaining one, south of the one above"
+1011,"Quae est in ore, est eadem cum principio aquae","the one in the mouth, the same as the start of the water"
+1012,Praecedens de tribus quae sunt in australi capitis circumferentia,the western of the three on the southern edge of the head
+1013,Media ipsarum,the middle one of them
+1014,Sequens de tribus,the eastern of the three
+1015,Quae est ad branchias,the one at the gills
+1016,Quae est in dorsali australique spina,the one on the southern spine of the back
+1017,Sequens de duabus quae sunt in ventre,the eastern of the two on the belly
+1018,Antecedens ipsarum,the western one of them
+1019,Sequens de tribus quae sunt in borealis spina,the eastern of the three on the northern spine
+1020,Media ipsarum,the middle one of them
+1021,Praecedens de tribus,the western of the three
+1022,Quae in extrema cauda,the one at the end of the tail
+1023,Praecedens de tribus splendidis antecedentibus Piscem,the western of the three bright ones west of the Fish
+1024,Media ipsarum,the middle one of them
+1025,Sequens de tribus,the eastern of the three
+1026,Praecedens hanc et est obscura,"the one west of this, faint"
+1027,Australior de duabus reliquis quae sunt in septentrione,the more southern of the two remaining ones to the north
+1028,Borealis ipsarum,the northern one of them

@@ -1,3 +1,4 @@
+import csv
 import json
 import math
 import shutil
@@ -124,6 +125,7 @@ def test_js_matches_python():
         eq: lons.map((l) => S.eclipticToEquatorial(l, 20 - l / 10)),
         ptol: days.map((d) => S.starLongitude(100, d, "ptolemy")),
         tru: days.map((d) => S.starLongitude(100, d, "true")),
+        obl: days.map((d) => S.trueObliquity(d)),
         n: rows.length, first: rows[0],
       }}));
     """
@@ -139,9 +141,30 @@ def test_js_matches_python():
         assert got == pytest.approx(list(t.ecliptic_to_equatorial(v, 20 - v / 10)))
     assert js["ptol"] == pytest.approx([p.star_longitude(100, d) for d in days])
     assert js["tru"] == pytest.approx([p.star_longitude(100, d, "true") for d in days])
+    assert js["obl"] == pytest.approx([p.true_obliquity(d) for d in days])
     first = STARS[0]
     assert js["n"] == len(STARS)
     assert js["first"][3] / 60 == pytest.approx(first.lon) and js["first"][4] / 60 == pytest.approx(
         first.lat
     )
     assert math.isclose(js["first"][7], first.hip)
+
+
+def test_true_obliquity():
+    j2000 = 2451545.0 - precession.EPOCH_JD
+    assert precession.true_obliquity(j2000) == pytest.approx(23.4393, abs=1e-4)
+    assert precession.true_obliquity(precession.CATALOGUE_DAYS) == pytest.approx(23.68, abs=0.01)
+
+
+def test_latin_descriptions_cover_the_catalogue():
+    with (ROOT / "data" / "ptolemy_star_descriptions.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    assert [int(r["number"]) for r in rows] == list(range(1, 1029))
+    assert all(r["latin"] and r["english"] for r in rows)
+    by_name = {
+        "Sirius": 818, "Regulus": 469, "Spica": 510, "Arcturus": 110, "Antares": 553,
+        "Capella": 222, "Procyon": 848, "Canopus": 892,
+    }  # fmt: skip
+    for name, n in by_name.items():
+        assert name in rows[n - 1]["latin"], name
+        assert name in rows[n - 1]["english"], name

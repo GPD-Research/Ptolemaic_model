@@ -29,6 +29,12 @@
   input[type=range] { width: 100%; accent-color: var(--accent); }
   #speedLabel { font: 600 15px ui-monospace, Menlo, Consolas, monospace; color: var(--accent); }
   .presets button { padding: 3px 7px; font-size: 12px; }
+  .dlg { background: var(--panel, #15151c); color: var(--text, #ddd); border: 1px solid #444; border-radius: 8px; max-width: min(960px, 92vw); max-height: 86vh; }
+  .dlg::backdrop { background: rgba(0,0,0,.6); }
+  .dlg .row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .tblview { overflow: auto; max-height: 64vh; }
+  .tblview td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dim { color: var(--dim); font-size: 12px; }
   label.chk { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   td, th { padding: 3px 4px; text-align: left; }
@@ -61,7 +67,7 @@
       <button id="now">Now</button>
     </div>
     <div style="margin-top:10px">Speed: <span id="speedLabel"></span></div>
-    <input id="speed" type="range" min="0" max="800" step="1" value="0">
+    <input id="speed" type="range" min="0" max="1000" step="1" value="0">
     <div class="row presets">
       <button data-speed="1">1:1</button>
       <button data-speed="3600">1 h/s</button>
@@ -69,13 +75,23 @@
       <button data-speed="604800">1 wk/s</button>
       <button data-speed="2629800">1 mo/s</button>
       <button data-speed="31557600">1 yr/s</button>
+      <button data-speed="3155760000">100 yr/s</button>
     </div>
     <div class="row" style="margin-top:8px">
       <input id="jump" type="text" placeholder="YYYY-MM-DD (e.g. 0137-06-20, -500-01-01)" style="flex:1;min-width:0">
       <button id="go">Go</button>
     </div>
 
+    <h2>Data</h2>
+    <div class="row" style="margin-bottom:6px">
+      <button id="tablesBtn">Tables</button>
+      <button id="creditsBtn">Credits</button>
+    </div>
     <h2>View</h2>
+    <div class="row" style="margin-bottom:6px">
+      <button id="vFlat" class="on">Flat plan</button>
+      <button id="v3d">3-D sphere of stars</button>
+    </div>
     <div class="row">
       <select id="scale">
         <option value="schematic">Schematic spacing</option>
@@ -95,24 +111,64 @@
       </select>
     </label>
     <label class="chk"><input type="checkbox" id="showZodiac" checked> Zodiac ring</label>
+    <div id="sphereOpts" hidden>
+      <label class="chk"><input type="checkbox" id="showStars" checked> Ptolemy's 1,028 stars (size = his magnitude)</label>
+      <label class="chk"><input type="checkbox" id="showEquator" checked> Celestial equator and poles</label>
+      <label class="chk"><input type="checkbox" id="showConst" checked> Zodiac constellation names</label>
+      <label class="chk">Stars move by
+        <select id="starRate">
+          <option value="ptolemy">Ptolemy's precession, 1&deg; per century</option>
+          <option value="true">the real precession, 1&deg; per 72 years</option>
+        </select>
+      </label>
+      <div class="note" id="precNote"></div>
+    </div>
 
     <h2>Apparent positions</h2>
     <table>
-      <thead><tr><th>Body</th><th>Longitude</th><th>Motion</th></tr></thead>
+      <thead><tr><th>Body</th><th>Longitude</th><th>Motion</th><th>Latitude</th></tr></thead>
       <tbody id="table"></tbody>
     </table>
     <div class="note" style="margin-top:6px"><span class="retro">R</span> = retrograde (moving westward against the stars).</div>
+
+    <div id="starBox" hidden>
+      <h2>Star</h2>
+      <div class="note" id="starInfo">Click a star on the sphere.</div>
+    </div>
 
     <h2>Legend</h2>
     <div class="note">
       ● Earth (fixed, centre) &nbsp; + deferent centre &nbsp; × equant &nbsp; ◇ Moon prosneusis point<br>
       Dashed line: the equant line, along which the epicycle centre sweeps equal angles in equal times.<br>
       Schematic spacing gives every body its own ring and keeps Ptolemy's ratios within each body. Planetary Hypotheses uses his absolute nesting distances in Earth radii (zoom in for the inner bodies).<br>
+      3-D view: the planets' plane is the ecliptic, inside the sphere of the fixed stars. The zodiac signs (&#9800;&#xFE0E; &hellip;) are measured from the spring equinox and stay put; the stars, and the zodiac constellations with them, drift east by precession. The blue circle is the celestial equator, tilted 23&deg;51&prime; (Ptolemy's value).<br>
       Positions are Ptolemy's predictions extrapolated from his epoch, not the modern sky: they run about 1&deg; behind the real sky in his day and drift to about 10&deg; behind today because his year is slightly too long.
     </div>
   </aside>
 </div>
+<dialog id="tablesDlg" class="dlg">
+  <div class="row"><select id="tblSelect"></select><button id="tblCopy">Copy</button><button id="tblDownload">Download CSV</button><button class="close">Close</button></div>
+  <p id="tblNote" class="dim"></p>
+  <div id="tblView" class="tblview"></div>
+</dialog>
+<dialog id="creditsDlg" class="dlg">
+  <div class="row"><b>Credits and sources</b><button class="close">Close</button></div>
+  <ul>
+    <li><b>Planetary models and parameters:</b> Ptolemy, <i>Almagest</i> (c. AD 150), Books III&ndash;XI.</li>
+    <li><b>Star catalogue:</b> F. Verbunt &amp; R. H. van Gent, &ldquo;The star catalogues of Ptolemaios and Ulugh Beg&rdquo;, <i>A&amp;A</i> 544, A31 (2012), CDS J/A+A/544/A31, after G. J. Toomer, <i>Ptolemy's Almagest</i> (1984). Modern positions: ESA Hipparcos catalogue (1997).</li>
+    <li><b>Latin star descriptions:</b> F. Baily, &ldquo;The catalogues of Ptolemy, Ulugh Beigh, Tycho Brahe, Halley, Hevelius&rdquo;, <i>Memoirs of the RAS</i> 13 (1843), via the astro.isi.edu catalogue page (Internet Archive). English glosses: this project.</li>
+    <li><b>Latitude tables (XIII.5):</b> G. Van Brummelen, <i>Mathematical Tables in Ptolemy's Almagest</i>, PhD thesis, Simon Fraser University (1993), Tables 14.2&ndash;14.13.</li>
+    <li><b>Northern limits and the inclinations of Venus and Mercury (XIII.1&ndash;3):</b> K. Manitius, <i>Des Claudius Ptolem&auml;us Handbuch der Astronomie</i>, vol. 2 (Leipzig, 1913).</li>
+    <li><b>Chord table and precession:</b> recomputed from Ptolemy's definitions (I.11, VII.2&ndash;3).</li>
+  </ul>
+  <p class="dim">Ptolemy's numbers are public domain. The tables here are his values; no modern translation's wording is reproduced.</p>
+</dialog>
 <script src="ptolemy.js?v=f897ec6f"></script>
-<script src="app.js?v=c5c41d63"></script>
+<script src="sky.js?v=c6557f79"></script>
+<script src="stars.js?v=9b3582ac"></script>
+<script src="tables.js?v=20d1f318"></script>
+<script src="latitudes.js?v=589c0bdf"></script>
+<script src="tables_ui.js?v=6444221b"></script>
+<script src="app.js?v=f833cb89"></script>
 </body>
 </html>
