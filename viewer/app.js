@@ -434,6 +434,7 @@
     const mag = r[5] === 7 ? "faint" : r[5] === 9 ? "nebulous" : `${r[5]}${r[6] === "b" ? " (brighter)" : r[6] === "f" ? " (fainter)" : ""}`;
     $("starInfo").innerHTML = [
       `<b style="color:var(--text)">${NAMES[r[7]] ? NAMES[r[7]] + " \u00B7 " : ""}${CONST[cst][0]} (${CONST[cst][1]}), star ${i}</b> \u00B7 no. ${r[0]} of the catalogue`,
+      `His description: <i>${r[11]}</i>, \u201C${r[12]}\u201D <span style="opacity:.7">(Latin of Baily 1843${/east|west/.test(r[12]) ? "; western = leading in the daily turn" : ""})</span>`,
       `Ptolemy, AD 137: ${formatLon(r[3] / 60)}, latitude ${fmtDeg(r[4] / 60)}, magnitude ${mag}`,
       `At this date, by his precession: ${formatLon(lonP)}`,
       `The real sky at this date: ${formatLon(lonT)}, RA ${fmtRA(ra)}, Dec ${fmtDeg(dec)}`,

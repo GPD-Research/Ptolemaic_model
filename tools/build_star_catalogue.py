@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "ptolemy_star_catalogue.csv"
 JS_PATH = ROOT / "viewer" / "stars.js"
+DESCRIPTIONS_PATH = ROOT / "data" / "ptolemy_star_descriptions.csv"
 URL = "https://cdsarc.cds.unistra.fr/ftp/J/A+A/544/A31/ptolema.dat"
 
 FIELDS = [
@@ -43,7 +44,8 @@ HEADER = (
     "// Verbunt & van Gent 2012, A&A 544, A31 (CDS J/A+A/544/A31), after Toomer's edition.\n"
     "// Row: [number, constellation, index in it, longitude (arcmin), latitude (arcmin),\n"
     "//       magnitude (7 = faint, 9 = nebulous), qualifier (b/f), Hipparcos no.,\n"
-    "//       V mag, dLon, dLat (arcmin, Hipparcos - Ptolemy at equinox -128)]\n"
+    "//       V mag, dLon, dLat (arcmin, Hipparcos - Ptolemy at equinox -128),\n"
+    "//       Latin description (Baily 1843), English gloss]\n"
 )
 
 
@@ -64,7 +66,13 @@ def read_csv():
         return list(csv.DictReader(f))
 
 
+def read_descriptions():
+    with DESCRIPTIONS_PATH.open(newline="", encoding="utf-8") as f:
+        return {r["number"]: (r["latin"], r["english"]) for r in csv.DictReader(f)}
+
+
 def js_rows(rows):
+    words = read_descriptions()
     out = []
     for r in rows:
         lon = (int(r["lon_sign"]) - 1) * 1800 + int(r["lon_deg"]) * 60 + int(r["lon_min"])
@@ -76,7 +84,7 @@ def js_rows(rows):
                 -lat if r["lat_dir"] == "A" else lat, int(r["magnitude"]), r["qualifier"],
                 hip, float(r["vmag"]) if hip else None,
                 float(r["d_lon_arcmin"]) if hip else None,
-                float(r["d_lat_arcmin"]) if hip else None,
+                float(r["d_lat_arcmin"]) if hip else None, *words[r["number"]],
             ]
         )  # fmt: skip
     return out

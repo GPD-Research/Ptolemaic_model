@@ -1,3 +1,4 @@
+import csv
 import json
 import math
 import shutil
@@ -153,3 +154,17 @@ def test_true_obliquity():
     j2000 = 2451545.0 - precession.EPOCH_JD
     assert precession.true_obliquity(j2000) == pytest.approx(23.4393, abs=1e-4)
     assert precession.true_obliquity(precession.CATALOGUE_DAYS) == pytest.approx(23.68, abs=0.01)
+
+
+def test_latin_descriptions_cover_the_catalogue():
+    with (ROOT / "data" / "ptolemy_star_descriptions.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    assert [int(r["number"]) for r in rows] == list(range(1, 1029))
+    assert all(r["latin"] and r["english"] for r in rows)
+    by_name = {
+        "Sirius": 818, "Regulus": 469, "Spica": 510, "Arcturus": 110, "Antares": 553,
+        "Capella": 222, "Procyon": 848, "Canopus": 892,
+    }  # fmt: skip
+    for name, n in by_name.items():
+        assert name in rows[n - 1]["latin"], name
+        assert name in rows[n - 1]["english"], name
