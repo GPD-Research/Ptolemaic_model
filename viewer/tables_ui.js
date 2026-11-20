@@ -11,7 +11,7 @@
       build: () => [["arc (deg)", "chord (parts)", "sixtieths per half degree"],
         ...Array.from({ length: 360 }, (_, i) => {
           const a = (i + 1) / 2;
-          return [String(a), sx(SKY.chord(a)), sx((SKY.chord(a + 0.5) - SKY.chord(a)) / 30)];
+          return [String(a), sx(SKY.chord(a)), SKY.toSexagesimal((SKY.chord(a + 0.5) - SKY.chord(a)) / 30, 3)];
         })],
     },
     latitudes: {
