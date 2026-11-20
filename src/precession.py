@@ -48,3 +48,9 @@ def star_longitude(lon, days, rate="ptolemy"):
     if rate == "ptolemy":
         return (lon + ptolemy_shift(days)) % 360
     return (lon + catalogue_error_at_epoch() + true_shift(days)) % 360
+
+
+def true_obliquity(days):
+    """Real mean obliquity of the ecliptic at `days`, degrees (IAU 2006)."""
+    t = (days + EPOCH_JD - 2451545.0) / 36525
+    return (84381.406 - 46.836769 * t - 0.0001831 * t * t) / 3600

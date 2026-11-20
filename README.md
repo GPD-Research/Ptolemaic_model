@@ -24,6 +24,8 @@ Run it online at https://gpd-research.com/Ptolemaic_model/viewer/, or open `view
 * **Speed slider** from 1:1 real time up to about 3 years per second, with presets, play/pause, reverse, "Now" and jump-to-date.
 * **Views**: schematic ring spacing or the absolute nesting distances of the *Planetary Hypotheses*, isolate a single body, zoom and pan, trails that trace each body's looping path relative to Earth, and a live table of apparent longitude and daily motion with retrograde flags.
 
+* **3-D sphere of stars**: the "3-D sphere of stars" button tilts the planetary plane, which is the ecliptic, inside the sphere of the fixed stars. The sphere shows Ptolemy's 1,028 catalogue stars sized by his magnitude, the ecliptic with the twelve signs, and the celestial equator and poles at his obliquity. Drag to turn it. Precession moves the stars at his rate or the real one; the speed now goes up to 100 years per second, so the drift is visible. Click a star for its catalogue entry, its real position at that date and Ptolemy's error.
+
 Positions are Ptolemy's predictions, not the modern sky: about 1° behind the real sky in his day (his equinox error), drifting to about 10° behind today because his tropical year is slightly too long.
 
 ## Suggested Experiments

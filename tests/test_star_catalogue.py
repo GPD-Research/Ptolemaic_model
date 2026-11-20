@@ -124,6 +124,7 @@ def test_js_matches_python():
         eq: lons.map((l) => S.eclipticToEquatorial(l, 20 - l / 10)),
         ptol: days.map((d) => S.starLongitude(100, d, "ptolemy")),
         tru: days.map((d) => S.starLongitude(100, d, "true")),
+        obl: days.map((d) => S.trueObliquity(d)),
         n: rows.length, first: rows[0],
       }}));
     """
@@ -139,9 +140,16 @@ def test_js_matches_python():
         assert got == pytest.approx(list(t.ecliptic_to_equatorial(v, 20 - v / 10)))
     assert js["ptol"] == pytest.approx([p.star_longitude(100, d) for d in days])
     assert js["tru"] == pytest.approx([p.star_longitude(100, d, "true") for d in days])
+    assert js["obl"] == pytest.approx([p.true_obliquity(d) for d in days])
     first = STARS[0]
     assert js["n"] == len(STARS)
     assert js["first"][3] / 60 == pytest.approx(first.lon) and js["first"][4] / 60 == pytest.approx(
         first.lat
     )
     assert math.isclose(js["first"][7], first.hip)
+
+
+def test_true_obliquity():
+    j2000 = 2451545.0 - precession.EPOCH_JD
+    assert precession.true_obliquity(j2000) == pytest.approx(23.4393, abs=1e-4)
+    assert precession.true_obliquity(precession.CATALOGUE_DAYS) == pytest.approx(23.68, abs=0.01)
