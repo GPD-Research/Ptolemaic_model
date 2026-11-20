@@ -10,6 +10,14 @@ This module relies purely on geometry rather than dynamical forces. It is design
 * `src/astronomy.py` - Converts 2D physical paths into apparent angular longitudes as seen from an Earth-bound observer.
 * `src/metrics.py` - Statistical engine customized for circular data, handling 360-degree wraparounds and aggressive parameter penalties.
 
+## The sphere of the fixed stars
+The Almagest is more than a planetary model. It also holds a star catalogue, a theory of precession and the trigonometry behind both, all still visible in how astronomy works today.
+* `src/star_catalogue.py` - **Ptolemy's star catalogue** (Books VII-VIII): 1,028 entries in 48 constellations, each with ecliptic longitude and latitude for AD 137 and a magnitude from 1 to 6 (plus "faint" and "nebulous"). His magnitude scale is the one astronomers still use. Data: `data/ptolemy_star_catalogue.csv`, from the machine-readable edition of Verbunt & van Gent (2012, A&A 544, A31; CDS J/A+A/544/A31), based on Toomer's translation. That edition matches each star to its Hipparcos counterpart, so each entry carries Ptolemy's positional error: about half a degree typically (median 32').
+* `src/precession.py` - **Precession of the equinoxes**, discovered by Hipparchus: the stars drift east along the ecliptic. Ptolemy's rate is 1° per century, while the real rate is about 1° per 72 years. He added 2°40' to Hipparchus's longitudes, so his catalogue is already about 1° behind the real sky of AD 137, and his predictions fall further behind with time.
+* `src/trigonometry.py` - **Chords and spherical trigonometry** (Book I): the table of chords, crd(a) = 120 sin(a/2) in base 60 at every half degree, and the Menelaus-theorem conversions from ecliptic longitude to declination and right ascension, using his obliquity of 23°51'20". The step from his ecliptic coordinates to the equatorial right ascension and declination used today is one of these conversions.
+
+`viewer/sky.js` and `viewer/stars.js` are the viewer's copies; the tests check they match the Python. `python tools/build_star_catalogue.py` rebuilds both data files from CDS.
+
 ## Geocentric Simulator (animated viewer)
 Run it online at https://gpd-research.com/Ptolemaic_model/viewer/, or open `viewer/index.html` in any browser (no build or server needed; `make viewer` opens it). It draws the full Almagest model in 2D, centred on a fixed Earth, and animates it in time:
 * **Kinematics** (`viewer/ptolemy.js`, mirrored in `src/almagest.py`): eccentric deferents, equants and epicycles for the planets, the eccentric Sun, the lunar crank with its prosneusis point, and Mercury's moving deferent centre. Parameters, mean motions and epoch values (Nabonassar era) are Ptolemy's own.
