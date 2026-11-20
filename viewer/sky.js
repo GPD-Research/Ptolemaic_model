@@ -39,6 +39,7 @@
   // crd(2α) = 120 crd(2δ) crd(180 − 2ε) / (crd(180 − 2δ) crd(2ε)), i.e. sin α = tan δ / tan ε.
   function rightAscensionOfEcliptic(lon, eps = OBLIQUITY) {
     const [l, q] = quadrant(lon);
+    if (eps === 0) return l;
     const d = Math.abs(declinationOfEcliptic(q, eps));
     const a0 = arc((120 * chord(2 * d) * chord(180 - 2 * eps)) / (chord(180 - 2 * d) * chord(2 * eps))) / 2;
     return l <= 90 ? a0 : l <= 180 ? 180 - a0 : l <= 270 ? 180 + a0 : 360 - a0;
