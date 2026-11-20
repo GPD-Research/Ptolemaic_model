@@ -19,7 +19,7 @@ The Almagest is more than a planetary model. It also holds a star catalogue, a t
 
 `viewer/sky.js`, `viewer/stars.js`, `viewer/latitudes.js` and `viewer/tables.js` are the viewer's copies; the tests check they match the Python. `python tools/build_star_catalogue.py` rebuilds both data files from CDS; `python tools/build_tables_js.py` rebuilds `viewer/tables.js`.
 
-## Geocentric Simulator (animated viewer)
+## Almagest Visualizer (animated viewer)
 Run it online at https://gpd-research.com/Ptolemaic_model/viewer/, or open `viewer/index.html` in any browser (no build or server needed; `make viewer` opens it). It draws the full Almagest model in 2D, centred on a fixed Earth, and animates it in time:
 * **Kinematics** (`viewer/ptolemy.js`, mirrored in `src/almagest.py`): eccentric deferents, equants and epicycles for the planets, the eccentric Sun, the lunar crank with its prosneusis point, and Mercury's moving deferent centre. Parameters, mean motions and epoch values (Nabonassar era) are Ptolemy's own.
 * **Speed slider** from 1:1 real time up to about 3 years per second, with presets, play/pause, reverse, "Now" and jump-to-date.
