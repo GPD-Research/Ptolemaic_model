@@ -424,9 +424,9 @@
     return `${mm === 60 ? (hh + 1) % 24 : hh}h ${pad(mm === 60 ? 0 : mm)}m`;
   };
   function updateSphereReadouts() {
-    const moved = SKY.starLongitude(0, days, starRate), lag = SKY.starLongitude(0, days, "true") - SKY.starLongitude(0, days, "ptolemy");
-    const wrap = (x) => ((x + 540) % 360) - 180;
-    $("precNote").textContent = `Since Ptolemy's catalogue (AD 137) the stars have moved ${fmtDeg(wrap(moved - (starRate === "true" ? SKY.catalogueErrorAtEpoch() : 0)))} along the ecliptic. His predictions are ${fmtDeg(wrap(lag)).slice(1)} behind the real sky at this date.`;
+    const moved = starRate === "true" ? SKY.trueShift(days) : SKY.ptolemyShift(days);
+    const lag = SKY.catalogueErrorAtEpoch() + SKY.trueShift(days) - SKY.ptolemyShift(days);
+    $("precNote").textContent = `Since Ptolemy's catalogue (AD 137) the stars have moved ${fmtDeg(moved)} along the ecliptic (east is +). His predictions are ${fmtDeg(Math.abs(lag)).slice(1)} ${lag >= 0 ? "behind" : "ahead of"} the real sky at this date.`;
     if (selected === null) return;
     const r = STARS[selected], [cst, i] = [r[1], r[2]];
     const lonP = SKY.starLongitude(r[3] / 60, days, "ptolemy"), lonT = SKY.starLongitude(r[3] / 60, days, "true");
