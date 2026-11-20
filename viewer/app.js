@@ -197,7 +197,7 @@
   // ---- the sphere of the fixed stars (3-D view) -----------------------------
   const sphereRadius = () => viewRadius() + 24;
   const unit = (lon, lat) => [Math.cos(lat * RAD) * Math.cos(lon * RAD), Math.cos(lat * RAD) * Math.sin(lon * RAD), Math.sin(lat * RAD)];
-  const onSphere = (v) => toScreen(v, sphereRadius() / zoom);
+  const onSphere = (v) => toScreen(v, sphereRadius());
   const eqToEcl = (ra, dec, eps) => {
     const [x, y, z] = unit(ra, dec), e = eps * RAD;
     return [x, y * Math.cos(e) + z * Math.sin(e), -y * Math.sin(e) + z * Math.cos(e)];
