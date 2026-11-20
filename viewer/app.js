@@ -84,6 +84,7 @@
   let starRate = "ptolemy";
   let selected = null;
   let starScreen = [];
+  let starQ = [];
   let trailMode = $("trail").value;
   $("trail").addEventListener("change", () => { trailMode = $("trail").value; });
 
@@ -98,7 +99,7 @@
   // ---- view geometry ------------------------------------------------------
   let W = 0, H = 0, dpr = 1;
   function resize() {
-    dpr = window.devicePixelRatio || 1;
+    dpr = Math.min(2, window.devicePixelRatio || 1);
     W = canvas.clientWidth;
     H = canvas.clientHeight;
     canvas.width = Math.round(W * dpr);
@@ -251,24 +252,35 @@
       label(unit(0, 6), "equinox", front, "#e7b84a", "11px system-ui, sans-serif");
     }
     if (opt.showStars) {
+      if (!front) starQ = STARS.map((r) => onSphere(unit(starLon(r), r[4] / 60)));
+      // One path per colour and size: ~20 fills a frame instead of one per star.
+      const batches = new Map();
       STARS.forEach((r, i) => {
-        const q = onSphere(unit(starLon(r), r[4] / 60));
+        const q = starQ[i];
         if ((q[2] >= 0) !== front) return;
         const m = r[5] === 9 ? 3.5 : Math.min(r[5], 6);
-        const size = r[5] === 9 ? 1.6 : 3.1 - 0.42 * m;
-        const zod = ZODIAC.includes(r[1]);
-        ctx.fillStyle = r[5] === 9 ? "rgba(200,200,255,0.5)" : zod ? "#ffe9b0" : "#e8eefc";
-        ctx.globalAlpha = front ? 1 : 0.35;
-        ctx.beginPath(); ctx.arc(q[0], q[1], Math.max(0.7, size), 0, 2 * Math.PI); ctx.fill();
-        ctx.globalAlpha = 1;
-        if (front) {
-          starScreen.push([q[0], q[1], i]);
-          if (NAMES[r[7]] && r[5] <= 1) {
-            ctx.fillStyle = "rgba(200,210,235,0.75)"; ctx.font = "10px system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-            ctx.fillText(NAMES[r[7]], q[0] + 4, q[1] - 2);
-          }
-        }
+        const size = Math.max(0.7, r[5] === 9 ? 1.6 : 3.1 - 0.42 * m);
+        const color = r[5] === 9 ? "rgba(200,200,255,0.5)" : ZODIAC.includes(r[1]) ? "#ffe9b0" : "#e8eefc";
+        const key = color + "|" + size;
+        if (!batches.has(key)) batches.set(key, { color, size, pts: [] });
+        batches.get(key).pts.push(q);
+        if (front) starScreen.push([q[0], q[1], i]);
       });
+      ctx.globalAlpha = front ? 1 : 0.35;
+      batches.forEach(({ color, size, pts }) => {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        pts.forEach((q) => { ctx.moveTo(q[0] + size, q[1]); ctx.arc(q[0], q[1], size, 0, 2 * Math.PI); });
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      if (front) {
+        ctx.fillStyle = "rgba(200,210,235,0.75)"; ctx.font = "10px system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+        STARS.forEach((r, i) => {
+          const q = starQ[i];
+          if (q[2] >= 0 && NAMES[r[7]] && r[5] <= 1) ctx.fillText(NAMES[r[7]], q[0] + 4, q[1] - 2);
+        });
+      }
       if (opt.showConst)
         CENTROIDS.forEach(([c, lon, lat]) =>
           label(unit(SKY.starLongitude(lon, days, starRate), lat + (lat > 0 ? 9 : -9)), CONST[c][1], front, front ? "rgba(255,233,176,0.85)" : "rgba(255,233,176,0.3)", "italic 11px system-ui, sans-serif"));
@@ -280,15 +292,19 @@
     }
   }
 
+  const trailCache = Object.fromEntries(Object.keys(BODIES).map((n) => [n, new Map()]));
   function drawTrail(name, k) {
     const b = BODIES[name];
     const span = trailMode === "long" ? b.trailDays : b.synodic;
-    const start = Math.floor((days - span) / b.step) * b.step;
+    // Trail points sit on a fixed grid of multiples of b.step, so each is computed once and reused.
+    const i0 = Math.floor((days - span) / b.step), cache = trailCache[name];
+    if (cache.size > 3 * (span / b.step) + 10) cache.clear();
     ctx.beginPath();
-    let first = true;
-    for (let t = start; t < days; t += b.step) {
-      const s = toScreen(P.bodyState(name, t).pos, k);
-      if (first) { ctx.moveTo(s[0], s[1]); first = false; } else ctx.lineTo(s[0], s[1]);
+    for (let i = i0; i * b.step < days; i++) {
+      let p = cache.get(i);
+      if (!p) { p = P.bodyState(name, i * b.step).pos; cache.set(i, p); }
+      const s = toScreen(p, k);
+      if (i === i0) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]);
     }
     const s = toScreen(P.bodyState(name, days).pos, k);
     ctx.lineTo(s[0], s[1]);
@@ -336,11 +352,10 @@
       line(st.pos, lifted, k, alpha(b.color, 0.6), 1, [2, 2]);
       s = toScreen(lifted, k);
     }
+    ctx.fillStyle = alpha(b.color, 0.18);
+    ctx.beginPath(); ctx.arc(s[0], s[1], b.size + (name === "Sun" ? 7 : 3), 0, 2 * Math.PI); ctx.fill();
     ctx.fillStyle = b.color;
-    ctx.shadowColor = b.color;
-    ctx.shadowBlur = name === "Sun" ? 14 : 6;
     ctx.beginPath(); ctx.arc(s[0], s[1], b.size, 0, 2 * Math.PI); ctx.fill();
-    ctx.shadowBlur = 0;
     ctx.fillStyle = b.color;
     ctx.font = "12px system-ui, sans-serif";
     ctx.textAlign = "left";
@@ -497,8 +512,8 @@
     $("vFlat").classList.toggle("on", !three); $("v3d").classList.toggle("on", three);
     $("sphereOpts").hidden = $("starBox").hidden = !three;
     $("hint").textContent = three
-      ? "Drag to turn the sphere, scroll to zoom, double-click to reset. Click a star for its catalogue entry."
-      : "Scroll to zoom, drag to pan, double-click to reset. Click a body in the table to isolate it.";
+      ? "Drag to turn the sphere, scroll or pinch to zoom, double-click to reset. Click a star for its catalogue entry."
+      : "Scroll or pinch to zoom, drag to pan, double-click to reset. Click a body in the table to isolate it.";
     resetView(); lastTable = -Infinity;
   }
   $("vFlat").addEventListener("click", () => setView(false));
@@ -512,26 +527,43 @@
   focusSel.addEventListener("change", () => setFocus(focusSel.value));
   $("scale").addEventListener("change", () => { scaleMode = $("scale").value; resetView(); });
 
-  canvas.addEventListener("wheel", (e) => {
-    e.preventDefault();
+  function zoomAt(clientX, clientY, f) {
     const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left - W / 2, my = e.clientY - rect.top - H / 2;
-    const f = Math.exp(-e.deltaY * 0.0015);
+    const mx = clientX - rect.left - W / 2, my = clientY - rect.top - H / 2;
     const nz = Math.min(500, Math.max(0.2, zoom * f));
     const g = nz / zoom;
     pan = [mx - (mx - pan[0]) * g, my - (my - pan[1]) * g];
     zoom = nz;
+  }
+  canvas.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    zoomAt(e.clientX, e.clientY, Math.exp(-e.deltaY * 0.0015));
   }, { passive: false });
   let drag = null;
   let last = null, travel = 0;
+  // Two fingers pinch to zoom; one finger drags as the mouse does.
+  const pointers = new Map();
+  let pinch = null;
+  const spread = () => { const [a, b] = [...pointers.values()]; return [Math.hypot(a[0] - b[0], a[1] - b[1]), (a[0] + b[0]) / 2, (a[1] + b[1]) / 2]; };
   canvas.addEventListener("pointerdown", (e) => {
+    pointers.set(e.pointerId, [e.clientX, e.clientY]);
+    canvas.setPointerCapture(e.pointerId);
+    if (pointers.size === 2) { pinch = spread(); drag = null; return; }
+    if (pointers.size > 2) return;
     last = [e.clientX, e.clientY]; travel = 0;
     drag = [e.clientX - pan[0], e.clientY - pan[1]];
-    canvas.setPointerCapture(e.pointerId);
     canvas.classList.add("dragging");
   });
   // In 3-D, dragging right turns the near side right and dragging down tips it down.
   canvas.addEventListener("pointermove", (e) => {
+    if (pointers.has(e.pointerId)) pointers.set(e.pointerId, [e.clientX, e.clientY]);
+    if (pinch && pointers.size === 2) {
+      const now = spread();
+      zoomAt(now[1], now[2], now[0] / Math.max(1, pinch[0]));
+      pan = [pan[0] + now[1] - pinch[1], pan[1] + now[2] - pinch[2]];
+      pinch = now;
+      return;
+    }
     if (!drag) return;
     const dx = e.clientX - last[0], dy = e.clientY - last[1];
     last = [e.clientX, e.clientY]; travel += Math.abs(dx) + Math.abs(dy);
@@ -539,6 +571,11 @@
     yaw += dx * 0.008;
     tilt = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, tilt - dy * 0.008));
   });
+  function release(e) {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+    if (!pointers.size) { drag = null; canvas.classList.remove("dragging"); }
+  }
   canvas.addEventListener("pointerup", (e) => {
     if (drag && view3d && travel < 5 && opt.showStars) {
       const rect = canvas.getBoundingClientRect(), x = e.clientX - rect.left, y = e.clientY - rect.top;
@@ -547,8 +584,9 @@
       selected = best;
       lastTable = -Infinity;
     }
-    drag = null; canvas.classList.remove("dragging");
+    release(e);
   });
+  canvas.addEventListener("pointercancel", release);
   canvas.addEventListener("dblclick", resetView);
 
   // ---- loop ---------------------------------------------------------------

@@ -12,7 +12,7 @@
     font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
   #app { display: flex; height: 100%; }
   #stage { flex: 1; position: relative; min-width: 0; }
-  canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+  canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
   canvas.dragging { cursor: grabbing; }
   #clock { position: absolute; left: 14px; top: 10px; pointer-events: none; }
   #clock .date { font: 600 20px/1.2 ui-monospace, Menlo, Consolas, monospace; }
@@ -54,7 +54,7 @@
   <div id="stage">
     <canvas id="sky"></canvas>
     <div id="clock"><div class="date" id="date"></div><div class="sub" id="dateSub"></div></div>
-    <div id="hint">Scroll to zoom, drag to pan, double-click to reset. Click a body in the table to isolate it.</div>
+    <div id="hint">Scroll or pinch to zoom, drag to pan, double-click to reset. Click a body in the table to isolate it.</div>
   </div>
   <aside>
     <h1>Almagest Visualizer</h1>
@@ -169,6 +169,6 @@
 <script src="tables.js?v=20d1f318"></script>
 <script src="latitudes.js?v=589c0bdf"></script>
 <script src="tables_ui.js?v=6444221b"></script>
-<script src="app.js?v=f833cb89"></script>
+<script src="app.js?v=2b84f750"></script>
 </body>
 </html>
