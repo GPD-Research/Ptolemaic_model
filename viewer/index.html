@@ -61,7 +61,7 @@
       <button id="now">Now</button>
     </div>
     <div style="margin-top:10px">Speed: <span id="speedLabel"></span></div>
-    <input id="speed" type="range" min="0" max="800" step="1" value="0">
+    <input id="speed" type="range" min="0" max="1000" step="1" value="0">
     <div class="row presets">
       <button data-speed="1">1:1</button>
       <button data-speed="3600">1 h/s</button>
@@ -69,6 +69,7 @@
       <button data-speed="604800">1 wk/s</button>
       <button data-speed="2629800">1 mo/s</button>
       <button data-speed="31557600">1 yr/s</button>
+      <button data-speed="3155760000">100 yr/s</button>
     </div>
     <div class="row" style="margin-top:8px">
       <input id="jump" type="text" placeholder="YYYY-MM-DD (e.g. 0137-06-20, -500-01-01)" style="flex:1;min-width:0">
@@ -76,6 +77,10 @@
     </div>
 
     <h2>View</h2>
+    <div class="row" style="margin-bottom:6px">
+      <button id="vFlat" class="on">Flat plan</button>
+      <button id="v3d">3-D sphere of stars</button>
+    </div>
     <div class="row">
       <select id="scale">
         <option value="schematic">Schematic spacing</option>
@@ -95,6 +100,18 @@
       </select>
     </label>
     <label class="chk"><input type="checkbox" id="showZodiac" checked> Zodiac ring</label>
+    <div id="sphereOpts" hidden>
+      <label class="chk"><input type="checkbox" id="showStars" checked> Ptolemy's 1,028 stars (size = his magnitude)</label>
+      <label class="chk"><input type="checkbox" id="showEquator" checked> Celestial equator and poles</label>
+      <label class="chk"><input type="checkbox" id="showConst" checked> Zodiac constellation names</label>
+      <label class="chk">Stars move by
+        <select id="starRate">
+          <option value="ptolemy">Ptolemy's precession, 1&deg; per century</option>
+          <option value="true">the real precession, 1&deg; per 72 years</option>
+        </select>
+      </label>
+      <div class="note" id="precNote"></div>
+    </div>
 
     <h2>Apparent positions</h2>
     <table>
@@ -103,16 +120,24 @@
     </table>
     <div class="note" style="margin-top:6px"><span class="retro">R</span> = retrograde (moving westward against the stars).</div>
 
+    <div id="starBox" hidden>
+      <h2>Star</h2>
+      <div class="note" id="starInfo">Click a star on the sphere.</div>
+    </div>
+
     <h2>Legend</h2>
     <div class="note">
       ● Earth (fixed, centre) &nbsp; + deferent centre &nbsp; × equant &nbsp; ◇ Moon prosneusis point<br>
       Dashed line: the equant line, along which the epicycle centre sweeps equal angles in equal times.<br>
       Schematic spacing gives every body its own ring and keeps Ptolemy's ratios within each body. Planetary Hypotheses uses his absolute nesting distances in Earth radii (zoom in for the inner bodies).<br>
+      3-D view: the planets' plane is the ecliptic, inside the sphere of the fixed stars. The zodiac signs (&#9800;&#xFE0E; &hellip;) are measured from the spring equinox and stay put; the stars, and the zodiac constellations with them, drift east by precession. The blue circle is the celestial equator, tilted 23&deg;51&prime; (Ptolemy's value).<br>
       Positions are Ptolemy's predictions extrapolated from his epoch, not the modern sky: they run about 1&deg; behind the real sky in his day and drift to about 10&deg; behind today because his year is slightly too long.
     </div>
   </aside>
 </div>
 <script src="ptolemy.js?v=f897ec6f"></script>
-<script src="app.js?v=c5c41d63"></script>
+<script src="sky.js?v=c6557f79"></script>
+<script src="stars.js?v=f16d992e"></script>
+<script src="app.js?v=510569ff"></script>
 </body>
 </html>

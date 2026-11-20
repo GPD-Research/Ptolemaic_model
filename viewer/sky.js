@@ -65,6 +65,10 @@
     return (5028.796195 * t + 1.1054348 * t * t) / 3600;
   };
   const trueShift = (days, since = CATALOGUE_DAYS) => pA(days) - pA(since);
+  const trueObliquity = (days) => {
+    const t = (days + P.EPOCH_JD - 2451545) / 36525;
+    return (84381.406 - 46.836769 * t - 0.0001831 * t * t) / 3600;
+  };
   const catalogueErrorAtEpoch = () => trueShift(CATALOGUE_DAYS, HIPPARCHUS_DAYS) - HIPPARCHUS_SHIFT;
   const norm = (x) => ((x % 360) + 360) % 360;
   const starLongitude = (lon, days, rate = "ptolemy") =>
@@ -73,7 +77,7 @@
   const api = {
     OBLIQUITY, chord, arc, toSexagesimal, declinationOfEcliptic, rightAscensionOfEcliptic,
     eclipticToEquatorial, PTOLEMY_RATE, CATALOGUE_DAYS, HIPPARCHUS_DAYS, HIPPARCHUS_SHIFT,
-    ptolemyShift, trueShift, catalogueErrorAtEpoch, starLongitude,
+    ptolemyShift, trueShift, trueObliquity, catalogueErrorAtEpoch, starLongitude,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.PtolemySky = api;
