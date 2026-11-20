@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   const P = window.Ptolemy;
+  const L = window.Latitudes;
   const SKY = window.PtolemySky;
   const STARS = window.PtolemyStars;
   const RAD = Math.PI / 180;
@@ -328,7 +329,13 @@
     }
     if (opt.showSight) line(origin, st.pos, k, alpha(b.color, 0.25), 1);
 
-    const s = toScreen(st.pos, k);
+    let s = toScreen(st.pos, k);
+    if (view3d && L.INCLINATION[name] !== undefined || view3d && L.NORTHERN_LIMIT[name] !== undefined) {
+      const beta = L.latitudeOf(st), d = Math.hypot(st.pos[0], st.pos[1]);
+      const lifted = [st.pos[0], st.pos[1], d * Math.tan(beta * RAD)];
+      line(st.pos, lifted, k, alpha(b.color, 0.6), 1, [2, 2]);
+      s = toScreen(lifted, k);
+    }
     ctx.fillStyle = b.color;
     ctx.shadowColor = b.color;
     ctx.shadowBlur = name === "Sun" ? 14 : 6;
@@ -392,7 +399,7 @@
   ORDER.forEach((n) => {
     const tr = document.createElement("tr");
     tr.className = "body";
-    tr.innerHTML = `<td><span class="dot" style="background:${BODIES[n].color}"></span>${n}</td><td class="num"></td><td class="num"></td>`;
+    tr.innerHTML = `<td><span class="dot" style="background:${BODIES[n].color}"></span>${n}</td><td class="num"></td><td class="num"></td><td class="num"></td>`;
     tr.addEventListener("click", () => setFocus(focus === n ? "All" : n));
     tbody.appendChild(tr);
     rows[n] = tr;
@@ -410,6 +417,7 @@
     ORDER.forEach((n) => {
       const cells = rows[n].children;
       cells[1].textContent = formatLon(states[n].lon);
+      cells[3].textContent = L.NORTHERN_LIMIT[n] !== undefined || L.INCLINATION[n] !== undefined ? fmtDeg(L.latitudeOf(states[n])) : n === "Sun" ? "+0\u00B000\u2032" : "";
       const m = P.dailyMotion(n, days);
       cells[2].innerHTML = `${m >= 0 ? "+" : ""}${m.toFixed(3)}\u00B0/d${m < 0 ? ' <span class="retro">R</span>' : ""}`;
     });
