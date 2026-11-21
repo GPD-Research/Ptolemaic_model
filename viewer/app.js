@@ -541,6 +541,13 @@
     $("alphaVal").textContent = $("sphereAlpha").value + "%";
   });
   $("centerBtn").addEventListener("click", () => { pan = [0, 0]; });
+  let lockEarth = false;
+  $("lockBtn").addEventListener("click", () => {
+    lockEarth = !lockEarth;
+    $("lockBtn").classList.toggle("on", lockEarth);
+    $("lockBtn").setAttribute("aria-pressed", String(lockEarth));
+    if (lockEarth) pan = [0, 0];
+  });
   $("now").addEventListener("click", () => { days = P.daysFromDate(new Date()); });
 
   function jump() {
@@ -586,8 +593,7 @@
     const mx = clientX - rect.left - W / 2, my = clientY - rect.top - H / 2;
     const nz = Math.min(scaleMode === "hypotheses" && focus === "All" ? 650 : 500, Math.max(0.2, zoom * f));
     const g = nz / zoom;
-    // The flat plan stays centred on Earth; only the sphere view zooms toward the pointer.
-    pan = view3d ? [mx - (mx - pan[0]) * g, my - (my - pan[1]) * g] : [0, 0];
+    pan = lockEarth ? [0, 0] : [mx - (mx - pan[0]) * g, my - (my - pan[1]) * g];
     zoom = nz;
   }
   canvas.addEventListener("wheel", (e) => {
@@ -615,7 +621,7 @@
     if (pinch && pointers.size === 2) {
       const now = spread();
       zoomAt(now[1], now[2], now[0] / Math.max(1, pinch[0]));
-      if (view3d) pan = [pan[0] + now[1] - pinch[1], pan[1] + now[2] - pinch[2]];
+      if (view3d && !lockEarth) pan = [pan[0] + now[1] - pinch[1], pan[1] + now[2] - pinch[2]];
       pinch = now;
       return;
     }
@@ -662,7 +668,7 @@
       ]));
     } else {
       out.push("<h3>The flat plan</h3>" + li([
-        "Looking down on the ecliptic from the north. Earth is fixed at the centre and the view stays centred on it; zoom in to see the inner bodies.",
+        "Looking down on the ecliptic from the north. Earth is fixed at the centre. Zooming follows the pointer; the crosshair button brings Earth back to the middle, and the button below it keeps Earth centred while zooming.",
         "Each planet rides an epicycle whose centre moves round an eccentric deferent (+). It sweeps equal angles in equal times as seen from the equant (&times;), not from the deferent's centre: that is the dashed line.",
         "The Moon's and Mercury's deferent centres themselves turn on small circles (Ptolemy's crank mechanisms). The Moon's epicycle measures its anomaly from the line through its prosneusis point (&#9671;).",
         "The outer ring is the zodiac, twelve 30&deg; signs counted from the spring equinox.",
