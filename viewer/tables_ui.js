@@ -24,6 +24,12 @@
       note: "Fraction g(n) of the full latitude at argument of latitude n (from the northern limit); g(180 - n) for n < 90. Van Brummelen (1993), Table 14.8.",
       build: () => [T.ptolemy_latitude_interpolation.header, ...T.ptolemy_latitude_interpolation.rows],
     },
+    hypotheses: {
+      title: "Sizes and distances (Planetary Hypotheses I)",
+      note: "Least and greatest distance from Earth in Earth radii, apparent diameter as a fraction of the Sun's, and true diameter in Earth diameters. Ptolemy's values as given by Goldstein (1967). His Earth (Geography I) is 180,000 stades round, about 28,600 stades in radius. The viewer's dot sizes go as the square root of the diameter.",
+      build: () => [["body", "least distance (Earth radii)", "greatest distance (Earth radii)", "apparent diameter (Sun = 1)", "diameter (Earth = 1)", "diameter (decimal)"],
+        ...T.ptolemy_planetary_hypotheses.rows],
+    },
     stars: {
       title: "Star catalogue (Almagest VII.5-VIII.1)",
       note: "1,028 entries: ecliptic longitude and latitude for AD 137, magnitude, Hipparcos match (Verbunt & van Gent 2012), Latin description (Baily 1843) and English gloss.",

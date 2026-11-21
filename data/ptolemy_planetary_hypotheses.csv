@@ -1,0 +1,10 @@
+body,least_distance,greatest_distance,apparent_diameter,diameter,diameter_decimal
+Earth,0,0,,1,1.000
+Moon,33,64,,1/4 + 1/24,0.292
+Mercury,64,166,1/15,1/27,0.037
+Venus,166,1079,1/10,3/10,0.300
+Sun,1160,1260,1,5 1/2,5.500
+Mars,1260,8820,1/20,1 1/7,1.143
+Jupiter,8820,14187,1/12,4 1/3 + 1/40,4.358
+Saturn,14187,19865,1/18,4 1/3 + 1/20,4.383
+Fixed stars (1st magnitude),19865,20000,1/20,4 1/2 + 1/20,4.550

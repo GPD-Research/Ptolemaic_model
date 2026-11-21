@@ -40,15 +40,24 @@
   });
 
   const BODIES = {
-    Moon: { color: "#c9d1de", synodic: 29.5, trailDays: 30, step: 0.2, hypotheses: 64, size: 4 },
-    Mercury: { color: "#7fd1c7", synodic: 116, trailDays: 365, step: 0.5, hypotheses: 166, size: 3.5 },
-    Venus: { color: "#f4e7b5", synodic: 584, trailDays: 2922, step: 2, hypotheses: 1079, size: 4.5 },
-    Sun: { color: "#ffc93c", synodic: 365.25, trailDays: 365.25, step: 5, hypotheses: 1260, size: 7 },
-    Mars: { color: "#ff6b4a", synodic: 780, trailDays: 15 * 365.25, step: 3, hypotheses: 8820, size: 4 },
-    Jupiter: { color: "#e8a96b", synodic: 399, trailDays: 12 * 365.25, step: 5, hypotheses: 14187, size: 5.5 },
-    Saturn: { color: "#d7c58a", synodic: 378, trailDays: 30 * 365.25, step: 6, hypotheses: 19865, size: 5 },
+    Moon: { color: "#c9d1de", synodic: 29.5, trailDays: 30, step: 0.2 },
+    Mercury: { color: "#7fd1c7", synodic: 116, trailDays: 365, step: 0.5 },
+    Venus: { color: "#f4e7b5", synodic: 584, trailDays: 2922, step: 2 },
+    Sun: { color: "#ffc93c", synodic: 365.25, trailDays: 365.25, step: 5 },
+    Mars: { color: "#ff6b4a", synodic: 780, trailDays: 15 * 365.25, step: 3 },
+    Jupiter: { color: "#e8a96b", synodic: 399, trailDays: 12 * 365.25, step: 5 },
+    Saturn: { color: "#d7c58a", synodic: 378, trailDays: 30 * 365.25, step: 6 },
   };
   const ORDER = Object.keys(BODIES);
+  // Ptolemy's true diameters in Earth diameters (Planetary Hypotheses I). Dot radius goes as the
+  // square root so Mercury, 1/150 of the Sun, stays visible while his order of sizes is kept.
+  const HYP = Object.fromEntries(window.TABLES.ptolemy_planetary_hypotheses.rows.map((r) => [r[0], r]));
+  const EARTH_DIAMETER = Number(HYP.Earth[5]);
+  const dotRadius = (d) => Math.max(1.2, 3 * Math.sqrt(d));
+  Object.entries(BODIES).forEach(([n, b]) => {
+    b.hypotheses = Number(HYP[n][2]);
+    b.size = dotRadius(Number(HYP[n][5]));
+  });
   const SIGNS = ["\u2648", "\u2649", "\u264A", "\u264B", "\u264C", "\u264D", "\u264E", "\u264F", "\u2650", "\u2651", "\u2652", "\u2653"]
     .map((g) => g + "\uFE0E");
 
@@ -113,7 +122,7 @@
   function bodyScale(name) {
     const R = viewRadius();
     if (focus !== "All") return (0.97 * R) / maxDistance(name);
-    if (scaleMode === "hypotheses") return (BODIES[name].hypotheses / 19865) * R / maxDistance(name);
+    if (scaleMode === "hypotheses") return (BODIES[name].hypotheses / BODIES.Saturn.hypotheses) * R / maxDistance(name);
     const ring = ORDER.indexOf(name) + 1;
     return ((ring / ORDER.length) * R) / maxDistance(name);
   }
@@ -360,13 +369,18 @@
     ctx.font = "12px system-ui, sans-serif";
     ctx.textAlign = "left";
     ctx.textBaseline = "bottom";
-    ctx.fillText(name, s[0] + b.size + 3, s[1] - 2);
+    if (name === "Saturn") {
+      ctx.strokeStyle = alpha(b.color, 0.9);
+      ctx.lineWidth = 1.3;
+      ctx.beginPath(); ctx.ellipse(s[0], s[1], b.size * 2, b.size * 0.75, -0.35, 0, 2 * Math.PI); ctx.stroke();
+    }
+    ctx.fillText(name, s[0] + b.size * (name === "Saturn" ? 2 : 1) + 3, s[1] - 2);
   }
 
   function drawEarth() {
     const [x, y] = toScreen([0, 0], 1);
     ctx.fillStyle = "#3fa7d6";
-    ctx.beginPath(); ctx.arc(x, y, 6, 0, 2 * Math.PI); ctx.fill();
+    ctx.beginPath(); ctx.arc(x, y, dotRadius(EARTH_DIAMETER), 0, 2 * Math.PI); ctx.fill();
     ctx.strokeStyle = "#7cc6a4";
     ctx.lineWidth = 1.5;
     ctx.stroke();
@@ -513,8 +527,9 @@
     $("sphereOpts").hidden = $("starBox").hidden = !three;
     $("hint").textContent = three
       ? "Drag to turn the sphere, scroll or pinch to zoom, double-click to reset. Click a star for its catalogue entry."
-      : "Scroll or pinch to zoom, drag to pan, double-click to reset. Click a body in the table to isolate it.";
-    resetView(); lastTable = -Infinity;
+      : "Scroll or pinch to zoom, double-click to reset. Click a body in the table to isolate it.";
+    canvas.classList.toggle("flat", !three);
+    resetView(); lastTable = -Infinity; refreshInfo();
   }
   $("vFlat").addEventListener("click", () => setView(false));
   $("v3d").addEventListener("click", () => setView(true));
@@ -522,17 +537,18 @@
   function setFocus(n) {
     focus = n;
     focusSel.value = n;
-    resetView();
+    resetView(); refreshInfo();
   }
   focusSel.addEventListener("change", () => setFocus(focusSel.value));
-  $("scale").addEventListener("change", () => { scaleMode = $("scale").value; resetView(); });
+  $("scale").addEventListener("change", () => { scaleMode = $("scale").value; resetView(); refreshInfo(); });
 
   function zoomAt(clientX, clientY, f) {
     const rect = canvas.getBoundingClientRect();
     const mx = clientX - rect.left - W / 2, my = clientY - rect.top - H / 2;
-    const nz = Math.min(500, Math.max(0.2, zoom * f));
+    const nz = Math.min(scaleMode === "hypotheses" && focus === "All" ? 650 : 500, Math.max(0.2, zoom * f));
     const g = nz / zoom;
-    pan = [mx - (mx - pan[0]) * g, my - (my - pan[1]) * g];
+    // The flat plan stays centred on Earth; only the sphere view zooms toward the pointer.
+    pan = view3d ? [mx - (mx - pan[0]) * g, my - (my - pan[1]) * g] : [0, 0];
     zoom = nz;
   }
   canvas.addEventListener("wheel", (e) => {
@@ -551,8 +567,8 @@
     if (pointers.size === 2) { pinch = spread(); drag = null; return; }
     if (pointers.size > 2) return;
     last = [e.clientX, e.clientY]; travel = 0;
-    drag = [e.clientX - pan[0], e.clientY - pan[1]];
-    canvas.classList.add("dragging");
+    drag = true;
+    if (view3d) canvas.classList.add("dragging");
   });
   // In 3-D, dragging right turns the near side right and dragging down tips it down.
   canvas.addEventListener("pointermove", (e) => {
@@ -560,14 +576,14 @@
     if (pinch && pointers.size === 2) {
       const now = spread();
       zoomAt(now[1], now[2], now[0] / Math.max(1, pinch[0]));
-      pan = [pan[0] + now[1] - pinch[1], pan[1] + now[2] - pinch[2]];
+      if (view3d) pan = [pan[0] + now[1] - pinch[1], pan[1] + now[2] - pinch[2]];
       pinch = now;
       return;
     }
     if (!drag) return;
     const dx = e.clientX - last[0], dy = e.clientY - last[1];
     last = [e.clientX, e.clientY]; travel += Math.abs(dx) + Math.abs(dy);
-    if (!view3d) { pan = [e.clientX - drag[0], e.clientY - drag[1]]; return; }
+    if (!view3d) return;
     yaw += dx * 0.008;
     tilt = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, tilt - dy * 0.008));
   });
@@ -589,6 +605,59 @@
   canvas.addEventListener("pointercancel", release);
   canvas.addEventListener("dblclick", resetView);
 
+  // ---- the "i" notes, which follow the current settings --------------------
+  const li = (items) => "<ul>" + items.map((x) => `<li>${x}</li>`).join("") + "</ul>";
+  function infoHTML() {
+    const out = [];
+    const only = focus !== "All";
+    if (view3d) {
+      out.push("<h3>The sphere of the fixed stars</h3>" + li([
+        "The stars are Ptolemy's own: the 1,028 entries of his catalogue (Books VII&ndash;VIII), at his positions and sized by his magnitudes 1&ndash;6. Click one for his entry.",
+        "The empty cap in the south is real. He observed from Alexandria, about 31&deg; N, where stars more than about 59&deg; south of the celestial equator never rise, so he never saw or listed them.",
+        "The gold circle is the ecliptic with the twelve signs, counted from the spring equinox. The blue circle is the celestial equator, tilted 23&deg;51&prime; (his value).",
+        "The signs stay put while the stars, and the zodiac constellations with them, drift east by precession: 1&deg; per century by his rate, 1&deg; per 72 years in reality.",
+      ]));
+      out.push("<h3>The planets</h3>" + li([
+        "Their plane is the ecliptic, inside the sphere. Each planet sits on a dotted line at its Book XIII latitude, a few degrees north or south of it.",
+        "Ptolemy treated Earth as a mere point compared with the sphere of stars (Almagest I.6).",
+      ]));
+    } else {
+      out.push("<h3>The flat plan</h3>" + li([
+        "Looking down on the ecliptic from the north. Earth is fixed at the centre and the view stays centred on it; zoom in to see the inner bodies.",
+        "Each planet rides an epicycle whose centre moves round an eccentric deferent (+). It sweeps equal angles in equal times as seen from the equant (&times;), not from the deferent's centre: that is the dashed line.",
+        "The Moon's and Mercury's deferent centres themselves turn on small circles (Ptolemy's crank mechanisms). The Moon's epicycle measures its anomaly from the line through its prosneusis point (&#9671;).",
+        "The outer ring is the zodiac, twelve 30&deg; signs counted from the spring equinox.",
+      ]));
+    }
+    if (scaleMode === "hypotheses" && !only) {
+      out.push("<h3>Planetary Hypotheses distances</h3>" + li([
+        "Distances are in Earth radii: Moon up to 64, Mercury 64&ndash;166, Venus 166&ndash;1,079, Sun 1,160&ndash;1,260, Mars to 8,820, Jupiter to 14,187, Saturn to 19,865, and the fixed stars just beyond, at about 20,000.",
+        "Earth's own size is in his <i>Geography</i>, not the <i>Almagest</i>: 500 stades to a degree, so 180,000 stades round and about 57,000 across. With a stade of about 155&ndash;185 m that is roughly 15&ndash;30% too small.",
+        "The Moon and Sun were measured: the Moon's distance from its parallax, observed with his parallactic instrument, and the Sun's from the geometry of lunar eclipses (Almagest V.13&ndash;16).",
+        "The planets were not measured. He assumed the spheres nest with no empty space between them, so each body's least distance equals the greatest distance of the one below it.",
+        "Each planet's own model fixes the ratio of its least to greatest distance. Starting from the Moon's 64 and stacking those ratios outward gives every other distance.",
+        "He took it as confirmation that Venus's greatest distance, 1,079, came out close to the Sun's least, 1,160, which he had found independently. That near fit also supported his order of Mercury and Venus below the Sun.",
+      ]));
+    } else if (!only) {
+      out.push("<h3>Schematic spacing</h3>" + li([
+        "Every body gets its own ring, in Ptolemy's order. Within each body the deferent, epicycle and eccentricity keep his ratios.",
+        "The <i>Almagest</i> gives only these ratios for the planets (each deferent has radius 60 parts), not their distances. Pick Planetary Hypotheses distances for his later absolute sizes.",
+      ]));
+    } else {
+      out.push(`<h3>${focus} alone</h3>` + li([`${focus}'s model is scaled to fill the view, keeping Ptolemy's ratios. Click its row in the table again to show all bodies.`]));
+    }
+    out.push("<h3>The positions</h3>" + li([
+      "They are Ptolemy's predictions, run forward from his epoch, not the modern sky. They are about 1&deg; behind the real sky in his day and drift to about 10&deg; behind today, because his year is slightly too long.",
+      "Dot sizes follow his diameters in the <i>Planetary Hypotheses</i>, in Earth diameters: Sun 5&frac12;, Saturn and Jupiter about 4.4, Mars 1.1, Earth 1, Venus and Moon about 0.3, Mercury 1/27. The dots grow as the square root of these, so Mercury stays visible; the distances are far larger still.",
+    ]));
+    return out.join("");
+  }
+  function refreshInfo() {
+    $("infoTitle").textContent = view3d ? "3-D sphere of stars" : scaleMode === "hypotheses" && focus === "All" ? "Flat plan, Planetary Hypotheses distances" : "Flat plan";
+    $("infoBody").innerHTML = infoHTML();
+  }
+  $("infoBtn").addEventListener("click", () => { refreshInfo(); $("infoDlg").showModal(); });
+
   // ---- loop ---------------------------------------------------------------
   function frame(now) {
     const dt = Math.min(0.1, (now - lastFrame) / 1000);
@@ -603,5 +672,6 @@
 
   resize();
   setSpeed(1);
+  canvas.classList.add("flat");
   requestAnimationFrame(frame);
 })();
