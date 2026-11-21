@@ -108,7 +108,8 @@
   label.chk input[type=checkbox]:checked { background: radial-gradient(circle at 35% 30%, #ffc2b8, #ff3b30 45%, #b3120a);
     box-shadow: 0 0 6px #ff3b30, 0 0 12px rgba(255,59,48,.5); }
   label.chk input[type=checkbox]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
-  .readout { background: #000; border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+  .readout { background: #000; border: 1px solid var(--line); border-radius: 6px; padding: 4px 1px; margin: 0 -14px; }
+  .readout td:first-child { white-space: nowrap; }
   .readout tr.body:hover td { background: #111a2b; }
   @media (max-width: 760px) { #app { flex-direction: column; } #stage { height: 62vh; flex: none; }
     aside { width: auto; border-left: 0; border-top: 1px solid var(--line); } }
