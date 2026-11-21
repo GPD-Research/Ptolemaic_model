@@ -80,8 +80,9 @@
 
   let days = P.daysFromDate(new Date());
   let speed = 1;
-  let playing = true;
+  let playing = false;
   let direction = 1;
+  let sphereAlpha = 1;
   let scaleMode = "schematic";
   let focus = "All";
   let zoom = 1;
@@ -237,6 +238,7 @@
 
   function drawSphere(front) {
     const S = sphereRadius() * zoom;
+    ctx.globalAlpha = sphereAlpha;
     if (!front) {
       ctx.strokeStyle = "#2a3550"; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.arc(W / 2 + pan[0], H / 2 + pan[1], S, 0, 2 * Math.PI); ctx.stroke();
@@ -275,14 +277,14 @@
         batches.get(key).pts.push(q);
         if (front) starScreen.push([q[0], q[1], i]);
       });
-      ctx.globalAlpha = front ? 1 : 0.35;
+      ctx.globalAlpha = (front ? 1 : 0.35) * sphereAlpha;
       batches.forEach(({ color, size, pts }) => {
         ctx.fillStyle = color;
         ctx.beginPath();
         pts.forEach((q) => { ctx.moveTo(q[0] + size, q[1]); ctx.arc(q[0], q[1], size, 0, 2 * Math.PI); });
         ctx.fill();
       });
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha = sphereAlpha;
       if (front) {
         ctx.fillStyle = "rgba(200,210,235,0.75)"; ctx.font = "10px system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
         STARS.forEach((r, i) => {
@@ -299,6 +301,7 @@
       ctx.strokeStyle = "#ff7b72"; ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.arc(q[0], q[1], 7, 0, 2 * Math.PI); ctx.stroke();
     }
+    ctx.globalAlpha = 1;
   }
 
   const trailCache = Object.fromEntries(Object.keys(BODIES).map((n) => [n, new Map()]));
@@ -493,15 +496,51 @@
   document.querySelectorAll("[data-speed]").forEach((b) =>
     b.addEventListener("click", () => setSpeed(Number(b.dataset.speed))));
 
-  $("play").addEventListener("click", () => {
-    playing = !playing;
-    $("play").textContent = playing ? "Pause" : "Play";
-    $("play").classList.toggle("on", playing);
+  // Tape-deck transport: as on a cassette deck, Play stays latched down under Pause.
+  let transport = "stop";
+  function setTransport(t) {
+    transport = t;
+    playing = t === "play";
+    $("play").classList.toggle("in", t !== "stop");
+    $("pause").classList.toggle("in", t === "pause");
+    $("stop").classList.toggle("in", t === "stop");
+    $("deck").classList.toggle("run", playing);
+  }
+  $("play").addEventListener("click", () => setTransport("play"));
+  $("pause").addEventListener("click", () => {
+    if (transport !== "stop") setTransport(transport === "pause" ? "play" : "pause");
   });
-  $("reverse").addEventListener("click", () => {
+  $("stop").addEventListener("click", () => setTransport("stop"));
+  $("dir").addEventListener("click", () => {
     direction = -direction;
-    $("reverse").classList.toggle("on", direction < 0);
+    $("dir").classList.toggle("rev", direction < 0);
+    $("dir").setAttribute("aria-checked", String(direction < 0));
+    $("deck").classList.toggle("rev", direction < 0);
   });
+
+  // Each view is a cassette in a dual deck; the loaded one's spools turn while time runs.
+  function cassette(text) {
+    const teeth = [0, 60, 120, 180, 240, 300].map((d) => `<rect x="-1.2" y="-6.5" width="2.4" height="3" fill="#2a2c31" transform="rotate(${d})"/>`).join("");
+    const spool = (x, pack) => `<circle cx="${x}" cy="57" r="${pack}" fill="#4a3426"/>` +
+      `<g transform="translate(${x} 57)"><g class="spool"><circle r="8" fill="#e8e4d8"/><circle r="3.5" fill="#0d0f13"/>${teeth}</g></g>`;
+    return `<svg viewBox="0 0 140 88" aria-hidden="true">
+      <rect x="1" y="1" width="138" height="86" rx="6" fill="#1b1d22" stroke="#3a3e47"/>
+      <rect x="8" y="6" width="124" height="34" rx="3" fill="#ece5cf"/>
+      <rect x="8" y="10" width="124" height="4" fill="#c8553d"/>
+      <text x="70" y="31" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="${text.length > 12 ? 10.5 : 13}" fill="#1d2433">${text}</text>
+      <rect x="22" y="44" width="96" height="26" rx="5" fill="#0a0b0d" stroke="#555a64"/>
+      ${spool(46, 15)}${spool(94, 11)}
+      <path d="M40 87 L46 74 H94 L100 87" fill="#15171b" stroke="#3a3e47"/>
+      <circle cx="9" cy="80" r="2" fill="#3a3e47"/><circle cx="131" cy="80" r="2" fill="#3a3e47"/>
+    </svg>`;
+  }
+  ["vFlat", "v3d"].forEach((id) => { $(id).innerHTML = cassette($(id).dataset.label); });
+
+  $("sphereAlpha").addEventListener("input", () => {
+    sphereAlpha = Number($("sphereAlpha").value) / 100;
+    $("alphaVal").textContent = $("sphereAlpha").value + "%";
+  });
+  $("centerBtn").addEventListener("click", () => { pan = [0, 0]; });
   $("now").addEventListener("click", () => { days = P.daysFromDate(new Date()); });
 
   function jump() {
@@ -524,7 +563,7 @@
   function setView(three) {
     view3d = three;
     $("vFlat").classList.toggle("on", !three); $("v3d").classList.toggle("on", three);
-    $("sphereOpts").hidden = $("starBox").hidden = !three;
+    $("sphereOpts").hidden = $("starBox").hidden = $("fader").hidden = !three;
     $("hint").textContent = three
       ? "Drag to turn the sphere, scroll or pinch to zoom, double-click to reset. Click a star for its catalogue entry."
       : "Scroll or pinch to zoom, double-click to reset. Click a body in the table to isolate it.";
