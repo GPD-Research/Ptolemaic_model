@@ -184,7 +184,7 @@
 
   function drawZodiac() {
     const R = viewRadius() + 6;
-    const cx = W / 2, cy = H / 2;
+    const cx = W / 2 + pan[0], cy = H / 2 + pan[1];
     ctx.strokeStyle = "#2a3550";
     ctx.lineWidth = 1;
     ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.stroke();
